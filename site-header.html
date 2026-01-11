@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>site-header</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-white text-slate-900">
+<header class="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <nav class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 lg:px-8">
+        <a href="/" class="flex items-center gap-2">
+          <span data-component='TreeDeciduous'></span>
+          <span class="font-serif text-xl font-bold text-foreground">Ducky&apos;s Tree Service</span>
+        </a>
+
+        
+        <div class="hidden lg:flex lg:gap-x-8">
+          <a
+              key=Home
+              href=/
+              class="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+            >
+              Home
+            </a>
+<a
+              key=Services
+              href=/services
+              class="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+            >
+              Services
+            </a>
+<a
+              key=Service Areas
+              href=/service-areas
+              class="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+            >
+              Service Areas
+            </a>
+<a
+              key=Reviews
+              href=/reviews
+              class="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+            >
+              Reviews
+            </a>
+<a
+              key=About
+              href=/about
+              class="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+            >
+              About
+            </a>
+<a
+              key=Contact
+              href=/contact
+              class="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+            >
+              Contact
+            </a>
+        </div>
+
+        <div class="hidden lg:flex lg:items-center lg:gap-x-4">
+          <a href="tel:+15551234567" class="flex items-center gap-2 text-sm font-semibold text-foreground">
+            <span data-component='Phone'></span>
+            (555) 123-4567
+          </a>
+          <button asChild>
+            <a href="/contact">Get Free Quote</a>
+          </button>
+        </div>
+
+        
+        <button
+          type="button"
+          class="lg:hidden -m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-foreground"
+         
+        >
+          <span class="sr-only">Open main menu</span>
+          
+        </button>
+      </nav>
+
+      
+      
+    </header>
+</body>
+</html>
