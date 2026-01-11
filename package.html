@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>package.json (HTML view)</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #0b0f19;
+      --card: #101826;
+      --text: #e6e8ee;
+      --muted: #aab0c0;
+      --border: rgba(255,255,255,.12);
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+    }
+    body {
+      margin: 0;
+      font-family: var(--sans);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+    }
+    header {
+      padding: 24px 16px 0;
+      max-width: 980px;
+      margin: 0 auto;
+    }
+    h1 {
+      margin: 0 0 6px;
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: .2px;
+    }
+    p {
+      margin: 0 0 18px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    main {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 0 16px 28px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,.35);
+    }
+    .card-top {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--border);
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .dot {
+      width: 10px; height: 10px; border-radius: 999px;
+      background: rgba(255,255,255,.25);
+    }
+    pre {
+      margin: 0;
+      padding: 14px;
+      overflow: auto;
+      font-family: var(--mono);
+      font-size: 13px;
+      line-height: 1.45;
+      tab-size: 2;
+      white-space: pre;
+    }
+    code { font-family: var(--mono); }
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #f6f7fb;
+        --card: #ffffff;
+        --text: #111827;
+        --muted: #4b5563;
+        --border: rgba(17,24,39,.12);
+      }
+      .card { box-shadow: 0 10px 30px rgba(0,0,0,.08); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>package.json (HTML view)</h1>
+    <p>Static HTML rendering of your <strong>package.json</strong>.</p>
+  </header>
+
+  <main>
+    <section class="card" aria-label="package json">
+      <div class="card-top">
+        <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+        <span style="margin-left:6px">/package.json</span>
+      </div>
+      <pre><code>{
+  &quot;name&quot;: &quot;my-v0-project&quot;,
+  &quot;version&quot;: &quot;0.1.0&quot;,
+  &quot;private&quot;: true,
+  &quot;scripts&quot;: {
+    &quot;dev&quot;: &quot;next dev&quot;,
+    &quot;build&quot;: &quot;next build&quot;,
+    &quot;start&quot;: &quot;next start&quot;,
+    &quot;lint&quot;: &quot;eslint .&quot;
+  },
+  &quot;dependencies&quot;: {
+    &quot;@hookform/resolvers&quot;: &quot;^3.10.0&quot;,
+    &quot;@radix-ui/react-accordion&quot;: &quot;1.2.2&quot;,
+    &quot;@radix-ui/react-alert-dialog&quot;: &quot;1.1.4&quot;,
+    &quot;@radix-ui/react-aspect-ratio&quot;: &quot;1.1.1&quot;,
+    &quot;@radix-ui/react-avatar&quot;: &quot;1.1.2&quot;,
+    &quot;@radix-ui/react-checkbox&quot;: &quot;1.1.3&quot;,
+    &quot;@radix-ui/react-collapsible&quot;: &quot;1.1.2&quot;,
+    &quot;@radix-ui/react-context-menu&quot;: &quot;2.2.4&quot;,
+    &quot;@radix-ui/react-dialog&quot;: &quot;1.1.4&quot;,
+    &quot;@radix-ui/react-dropdown-menu&quot;: &quot;2.1.4&quot;,
+    &quot;@radix-ui/react-hover-card&quot;: &quot;1.1.4&quot;,
+    &quot;@radix-ui/react-label&quot;: &quot;2.1.1&quot;,
+    &quot;@radix-ui/react-menubar&quot;: &quot;1.1.4&quot;,
+    &quot;@radix-ui/react-navigation-menu&quot;: &quot;1.2.3&quot;,
+    &quot;@radix-ui/react-popover&quot;: &quot;1.1.4&quot;,
+    &quot;@radix-ui/react-progress&quot;: &quot;1.1.1&quot;,
+    &quot;@radix-ui/react-radio-group&quot;: &quot;1.2.2&quot;,
+    &quot;@radix-ui/react-scroll-area&quot;: &quot;1.2.2&quot;,
+    &quot;@radix-ui/react-select&quot;: &quot;2.1.4&quot;,
+    &quot;@radix-ui/react-separator&quot;: &quot;1.1.1&quot;,
+    &quot;@radix-ui/react-slider&quot;: &quot;1.2.2&quot;,
+    &quot;@radix-ui/react-slot&quot;: &quot;1.1.1&quot;,
+    &quot;@radix-ui/react-switch&quot;: &quot;1.1.2&quot;,
+    &quot;@radix-ui/react-tabs&quot;: &quot;1.1.2&quot;,
+    &quot;@radix-ui/react-toast&quot;: &quot;1.2.4&quot;,
+    &quot;@radix-ui/react-toggle&quot;: &quot;1.1.1&quot;,
+    &quot;@radix-ui/react-toggle-group&quot;: &quot;1.1.1&quot;,
+    &quot;@radix-ui/react-tooltip&quot;: &quot;1.1.6&quot;,
+    &quot;@vercel/analytics&quot;: &quot;1.3.1&quot;,
+    &quot;autoprefixer&quot;: &quot;^10.4.20&quot;,
+    &quot;class-variance-authority&quot;: &quot;^0.7.1&quot;,
+    &quot;clsx&quot;: &quot;^2.1.1&quot;,
+    &quot;cmdk&quot;: &quot;1.0.4&quot;,
+    &quot;date-fns&quot;: &quot;4.1.0&quot;,
+    &quot;embla-carousel-react&quot;: &quot;8.5.1&quot;,
+    &quot;input-otp&quot;: &quot;1.4.1&quot;,
+    &quot;lucide-react&quot;: &quot;^0.454.0&quot;,
+    &quot;next&quot;: &quot;16.0.10&quot;,
+    &quot;next-themes&quot;: &quot;^0.4.6&quot;,
+    &quot;react&quot;: &quot;19.2.0&quot;,
+    &quot;react-day-picker&quot;: &quot;9.8.0&quot;,
+    &quot;react-dom&quot;: &quot;19.2.0&quot;,
+    &quot;react-hook-form&quot;: &quot;^7.60.0&quot;,
+    &quot;react-resizable-panels&quot;: &quot;^2.1.7&quot;,
+    &quot;recharts&quot;: &quot;2.15.4&quot;,
+    &quot;sonner&quot;: &quot;^1.7.4&quot;,
+    &quot;tailwind-merge&quot;: &quot;^3.3.1&quot;,
+    &quot;tailwindcss-animate&quot;: &quot;^1.0.7&quot;,
+    &quot;vaul&quot;: &quot;^1.1.2&quot;,
+    &quot;zod&quot;: &quot;3.25.76&quot;
+  },
+  &quot;devDependencies&quot;: {
+    &quot;@tailwindcss/postcss&quot;: &quot;^4.1.9&quot;,
+    &quot;@types/node&quot;: &quot;^22&quot;,
+    &quot;@types/react&quot;: &quot;^19&quot;,
+    &quot;@types/react-dom&quot;: &quot;^19&quot;,
+    &quot;postcss&quot;: &quot;^8.5&quot;,
+    &quot;tailwindcss&quot;: &quot;^4.1.9&quot;,
+    &quot;tw-animate-css&quot;: &quot;1.3.3&quot;,
+    &quot;typescript&quot;: &quot;^5&quot;
+  }
+}</code></pre>
+    </section>
+  </main>
+</body>
+</html>
