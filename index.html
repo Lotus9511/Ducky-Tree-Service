@@ -2,486 +2,1048 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>index</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-<style>
-:root {
-  --background: oklch(0.98 0.005 120);
-  --foreground: oklch(0.2 0.02 150);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.2 0.02 150);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.2 0.02 150);
-  --primary: oklch(0.35 0.12 150);
-  --primary-foreground: oklch(0.98 0 0);
-  --secondary: oklch(0.95 0.01 90);
-  --secondary-foreground: oklch(0.25 0.02 150);
-  --muted: oklch(0.94 0.01 120);
-  --muted-foreground: oklch(0.45 0.02 150);
-  --accent: oklch(0.55 0.15 85);
-  --accent-foreground: oklch(0.15 0.02 150);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.577 0.245 27.325);
-  --border: oklch(0.88 0.02 120);
-  --input: oklch(0.92 0.01 120);
-  --ring: oklch(0.35 0.12 150);
-  --chart-1: oklch(0.35 0.12 150);
-  --chart-2: oklch(0.55 0.15 85);
-  --chart-3: oklch(0.45 0.08 150);
-  --chart-4: oklch(0.65 0.12 90);
-  --chart-5: oklch(0.5 0.1 120);
-  --radius: 0.5rem;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.35 0.12 150);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
-}
-.dark {
-  --background: oklch(0.15 0.02 150);
-  --foreground: oklch(0.95 0.01 120);
-  --card: oklch(0.18 0.02 150);
-  --card-foreground: oklch(0.95 0.01 120);
-  --popover: oklch(0.18 0.02 150);
-  --popover-foreground: oklch(0.95 0.01 120);
-  --primary: oklch(0.55 0.15 150);
-  --primary-foreground: oklch(0.98 0 0);
-  --secondary: oklch(0.25 0.02 150);
-  --secondary-foreground: oklch(0.95 0.01 120);
-  --muted: oklch(0.25 0.02 150);
-  --muted-foreground: oklch(0.65 0.02 120);
-  --accent: oklch(0.6 0.15 85);
-  --accent-foreground: oklch(0.98 0 0);
-  --destructive: oklch(0.396 0.141 25.723);
-  --destructive-foreground: oklch(0.637 0.237 25.331);
-  --border: oklch(0.3 0.02 150);
-  --input: oklch(0.25 0.02 150);
-  --ring: oklch(0.55 0.15 150);
-  --chart-1: oklch(0.55 0.15 150);
-  --chart-2: oklch(0.6 0.15 85);
-  --chart-3: oklch(0.5 0.08 150);
-  --chart-4: oklch(0.65 0.12 90);
-  --chart-5: oklch(0.55 0.1 120);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(0.269 0 0);
-  --sidebar-ring: oklch(0.439 0 0);
-}
-</style>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Ducky's Tree Service — Home</title>
+  <meta name="description" content="Professional tree removal, trimming, stump grinding, and emergency service. Licensed & insured. Free estimates." />
+
+  <!-- Fonts (optional) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#0b120e;
+      --panel:rgba(18, 24, 20, .66);
+      --panel2:rgba(255,255,255,.06);
+      --line:rgba(255,255,255,.10);
+      --text:#e9efe9;
+      --muted:rgba(233,239,233,.78);
+      --muted2:rgba(233,239,233,.62);
+      --brand:#0a5a2a;
+      --brand2:#0b6b31;
+      --brand3:#083f1f;
+      --cta:#0c6b31;
+      --cta2:#0b5d2c;
+      --cream:#efe9de;
+      --shadow: 0 20px 70px rgba(0,0,0,.45);
+      --shadow2: 0 12px 36px rgba(0,0,0,.35);
+      --r:18px;
+      --r2:22px;
+      --max:1180px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--text);
+      background: var(--bg);
+      overflow-x:hidden;
+    }
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+
+    /* Background */
+    .page-bg{
+      position:fixed; inset:0;
+      background:
+        linear-gradient(180deg, rgba(0,0,0,.65), rgba(0,0,0,.72)),
+        url("https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=2400&q=70");
+      background-size:cover;
+      background-position:center;
+      filter:saturate(1.05);
+      transform:scale(1.02);
+      z-index:-2;
+    }
+    .page-vignette{
+      position:fixed; inset:-2px;
+      background:
+        radial-gradient(1200px 600px at 15% 10%, rgba(255,255,255,.10), transparent 60%),
+        radial-gradient(1000px 800px at 85% 10%, rgba(10,90,42,.18), transparent 62%),
+        radial-gradient(900px 700px at 50% 90%, rgba(0,0,0,.35), transparent 55%);
+      z-index:-1;
+      pointer-events:none;
+    }
+
+    /* Top nav */
+    .nav-wrap{
+      position:sticky; top:0;
+      z-index:50;
+      background: rgba(232, 227, 215, .88);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(0,0,0,.08);
+    }
+    .nav{
+      max-width: var(--max);
+      margin:0 auto;
+      padding: 12px 18px;
+      display:flex;
+      align-items:center;
+      gap:16px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px;
+      min-width: 220px;
+      color:#132015;
+      font-weight:700;
+      letter-spacing:.2px;
+    }
+    .brand .mark{
+      width:34px;height:34px;
+      display:grid;place-items:center;
+      border-radius:10px;
+      background: rgba(10,90,42,.12);
+      border:1px solid rgba(10,90,42,.18);
+    }
+    .brand .name{
+      font-family: "Playfair Display", serif;
+      font-weight:700;
+      font-size:22px;
+    }
+
+    .nav-links{
+      display:flex; align-items:center; gap:20px;
+      color: rgba(19,32,21,.78);
+      font-weight:500;
+      margin-left:10px;
+      flex:1;
+    }
+    .nav-links a{padding:8px 6px;border-radius:10px}
+    .nav-links a:hover{background: rgba(0,0,0,.04)}
+    .nav-right{
+      display:flex; align-items:center; gap:12px;
+      color:#132015;
+      font-weight:600;
+      white-space:nowrap;
+    }
+    .phone{
+      display:flex; align-items:center; gap:8px;
+      padding:8px 10px;
+      border-radius:12px;
+      background: rgba(0,0,0,.04);
+    }
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      gap:10px;
+      padding:10px 14px;
+      border-radius:12px;
+      border:1px solid rgba(0,0,0,.10);
+      background: rgba(255,255,255,.55);
+      color:#132015;
+      font-weight:600;
+      box-shadow: 0 8px 20px rgba(0,0,0,.10);
+      cursor:pointer;
+    }
+    .btn:hover{transform:translateY(-1px)}
+    .btn:active{transform:translateY(0px)}
+    .btn-primary{
+      background: linear-gradient(180deg, var(--cta), var(--cta2));
+      border-color: rgba(0,0,0,.12);
+      color:#f2fff6;
+      box-shadow: 0 10px 28px rgba(10,90,42,.32);
+    }
+    .btn-outline{
+      background: transparent;
+      color:#f2fff6;
+      border: 1px solid rgba(255,255,255,.28);
+      box-shadow:none;
+    }
+    .btn-outline:hover{background: rgba(255,255,255,.06)}
+    .hamburger{
+      display:none;
+      width:42px;height:42px;
+      border-radius:12px;
+      border:1px solid rgba(0,0,0,.12);
+      background: rgba(255,255,255,.55);
+      align-items:center;justify-content:center;
+      cursor:pointer;
+    }
+    .mobile-drawer{
+      display:none;
+      padding: 0 18px 16px;
+      max-width: var(--max);
+      margin: 0 auto;
+    }
+    .mobile-drawer a{
+      display:block;
+      padding: 12px 12px;
+      border-radius:12px;
+      color: rgba(19,32,21,.86);
+      font-weight:600;
+    }
+    .mobile-drawer a:hover{background: rgba(0,0,0,.04)}
+
+    /* Layout helpers */
+    .section{
+      position:relative;
+      padding: 60px 18px;
+    }
+    .container{
+      max-width: var(--max);
+      margin:0 auto;
+    }
+
+    /* Hero */
+    .hero{
+      padding: 56px 18px 34px;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 26px;
+      align-items:center;
+      min-height: 62vh;
+    }
+    .hero-left{
+      padding: 28px 0;
+    }
+    .kicker{
+      display:inline-flex;
+      gap:10px;
+      align-items:center;
+      color: rgba(255,255,255,.82);
+      font-weight:600;
+      letter-spacing:.2px;
+      margin-bottom: 14px;
+    }
+    h1{
+      font-family: "Playfair Display", serif;
+      font-weight:700;
+      line-height: .98;
+      font-size: clamp(44px, 6vw, 72px);
+      margin: 0 0 16px;
+      letter-spacing:-.6px;
+      text-shadow: 0 20px 70px rgba(0,0,0,.55);
+    }
+    .lead{
+      color: var(--muted);
+      font-size: 16px;
+      line-height:1.6;
+      max-width: 520px;
+      margin: 0 0 22px;
+    }
+    .hero-pills{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px 18px;
+      margin: 18px 0 26px;
+      max-width: 520px;
+    }
+    .pill{
+      display:flex; gap:10px; align-items:center;
+      color: rgba(255,255,255,.86);
+      font-weight:600;
+      font-size:14px;
+    }
+    .pill svg{opacity:.95}
+    .hero-ctas{
+      display:flex; gap:14px; align-items:center;
+      flex-wrap:wrap;
+      margin-top: 8px;
+    }
+    .hero-ctas .btn-primary{padding:12px 16px}
+    .hero-ctas .btn-outline{padding:12px 16px}
+
+    .hero-right{
+      position:relative;
+      display:grid;
+      place-items:center;
+    }
+    .media-card{
+      width:100%;
+      border-radius: 20px;
+      overflow:hidden;
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.16);
+      box-shadow: var(--shadow);
+      position:relative;
+    }
+    .media-card img{
+      width:100%;
+      height: 420px;
+      object-fit:cover;
+    }
+    .media-card:after{
+      content:"";
+      position:absolute; inset:0;
+      background: linear-gradient(180deg, rgba(0,0,0,.08), rgba(0,0,0,.24));
+      pointer-events:none;
+    }
+    .rating-badge{
+      position:absolute;
+      left: 28px;
+      bottom: 24px;
+      display:flex; align-items:center; gap:12px;
+      padding: 12px 14px;
+      border-radius: 16px;
+      background: rgba(255,255,255,.92);
+      color:#122015;
+      box-shadow: 0 18px 48px rgba(0,0,0,.28);
+      border: 1px solid rgba(0,0,0,.08);
+      max-width: 320px;
+    }
+    .rating-dot{
+      width:40px;height:40px;border-radius:999px;
+      display:grid;place-items:center;
+      background: rgba(10,90,42,.12);
+      color: var(--brand);
+      font-weight:800;
+    }
+    .stars{display:flex; gap:2px; color:#b98206}
+    .rating-text{font-weight:700}
+    .rating-sub{color:rgba(0,0,0,.62); font-weight:600; font-size:13px}
+
+    /* Steps bar */
+    .steps{
+      background: linear-gradient(180deg, rgba(10,90,42,.98), rgba(8,63,31,.98));
+      border-top: 1px solid rgba(255,255,255,.10);
+      border-bottom: 1px solid rgba(255,255,255,.10);
+      padding: 18px 18px;
+    }
+    .steps-grid{
+      max-width: var(--max);
+      margin: 0 auto;
+      display:grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 16px;
+    }
+    .step{
+      display:flex; gap:14px; align-items:flex-start;
+      padding: 14px 14px;
+      border-radius: 16px;
+    }
+    .step .icon{
+      width:44px;height:44px;border-radius:999px;
+      display:grid;place-items:center;
+      background: rgba(0,0,0,.20);
+      border: 1px solid rgba(255,255,255,.14);
+      flex:0 0 auto;
+    }
+    .step .meta{
+      font-size:12px;
+      letter-spacing:.12em;
+      font-weight:800;
+      opacity:.85;
+    }
+    .step h4{
+      margin:4px 0 6px;
+      font-size:16px;
+      font-weight:800;
+      letter-spacing:.2px;
+    }
+    .step p{
+      margin:0;
+      color: rgba(255,255,255,.78);
+      font-weight:600;
+      line-height:1.45;
+      font-size:13px;
+      max-width: 340px;
+    }
+
+    /* Services grid */
+    .section-title{
+      text-align:center;
+      margin-bottom: 26px;
+    }
+    .section-title h2{
+      font-family:"Playfair Display", serif;
+      margin:0 0 10px;
+      font-size: 44px;
+      letter-spacing:-.4px;
+    }
+    .section-title p{
+      margin:0;
+      color: var(--muted);
+      font-weight:600;
+    }
+
+    .cards{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+    .card{
+      border-radius: var(--r2);
+      overflow:hidden;
+      position:relative;
+      min-height: 210px;
+      border: 1px solid rgba(255,255,255,.14);
+      box-shadow: var(--shadow2);
+      background: rgba(255,255,255,.06);
+      transform: translateZ(0);
+    }
+    .card img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      transform: scale(1.02);
+    }
+    .card:before{
+      content:"";
+      position:absolute; inset:0;
+      background:
+        linear-gradient(90deg, rgba(0,0,0,.58), rgba(0,0,0,.20) 60%, rgba(0,0,0,.12)),
+        linear-gradient(180deg, rgba(0,0,0,.14), rgba(0,0,0,.36));
+      pointer-events:none;
+    }
+    .card .content{
+      position:absolute; inset:0;
+      padding: 22px;
+      display:flex;
+      flex-direction:column;
+      justify-content:flex-end;
+      gap: 10px;
+    }
+    .card h3{
+      margin:0;
+      font-family:"Playfair Display", serif;
+      font-size: 26px;
+      letter-spacing:-.2px;
+      text-shadow: 0 18px 60px rgba(0,0,0,.65);
+    }
+    .card p{
+      margin:0;
+      color: rgba(255,255,255,.82);
+      font-weight:600;
+      line-height:1.5;
+      max-width: 360px;
+      font-size: 13px;
+    }
+    .card .more{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      font-weight:800;
+      color: rgba(255,255,255,.88);
+      width:max-content;
+      padding: 8px 10px;
+      border-radius: 12px;
+      background: rgba(255,255,255,.07);
+      border: 1px solid rgba(255,255,255,.10);
+    }
+    .card:hover{transform: translateY(-2px)}
+    .card:hover img{transform: scale(1.06)}
+
+    /* Trio cards (emergency, storm, lot clearing) */
+    .trio{
+      padding-top: 10px;
+      padding-bottom: 0;
+    }
+
+    /* Stats bar */
+    .stats{
+      margin-top: 36px;
+      background: linear-gradient(180deg, rgba(10,90,42,.98), rgba(8,63,31,.98));
+      border-top: 1px solid rgba(255,255,255,.10);
+      border-bottom: 1px solid rgba(255,255,255,.10);
+      padding: 30px 18px;
+    }
+    .stats-grid{
+      max-width: var(--max);
+      margin: 0 auto;
+      display:grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+    .stat{
+      text-align:center;
+      padding: 18px 12px;
+      border-radius: 18px;
+    }
+    .stat .ico{
+      width:54px;height:54px;border-radius:999px;
+      display:grid;place-items:center;
+      margin: 0 auto 10px;
+      background: rgba(0,0,0,.18);
+      border: 1px solid rgba(255,255,255,.12);
+    }
+    .stat .num{
+      font-size: 44px;
+      font-weight:900;
+      letter-spacing:-.8px;
+      margin-bottom: 4px;
+    }
+    .stat .lbl{
+      color: rgba(255,255,255,.78);
+      font-weight:700;
+    }
+
+    /* Why choose */
+    .why{
+      padding-top: 56px;
+    }
+    .why-grid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+      align-items:center;
+    }
+    .why-panel{
+      border-radius: var(--r2);
+      background: rgba(0,0,0,.28);
+      border: 1px solid rgba(255,255,255,.12);
+      box-shadow: var(--shadow2);
+      overflow:hidden;
+      padding: 28px 26px;
+      backdrop-filter: blur(8px);
+    }
+    .why-panel h2{
+      font-family:"Playfair Display", serif;
+      margin: 0 0 10px;
+      font-size: 44px;
+    }
+    .why-panel p{
+      margin:0 0 22px;
+      color: var(--muted);
+      font-weight:600;
+      line-height:1.6;
+      max-width: 520px;
+    }
+    .feature-grid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 10px;
+    }
+    .feature{
+      display:flex; gap:12px; align-items:flex-start;
+      padding: 14px 14px;
+      border-radius: 18px;
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.10);
+    }
+    .feature .fi{
+      width:40px;height:40px;border-radius:12px;
+      display:grid;place-items:center;
+      background: rgba(10,90,42,.22);
+      border: 1px solid rgba(10,90,42,.35);
+      flex:0 0 auto;
+    }
+    .feature h4{margin:0 0 4px; font-weight:900}
+    .feature p{margin:0; color: var(--muted2); font-weight:600; font-size:13px; line-height:1.45}
+
+    .why-media{
+      border-radius: var(--r2);
+      overflow:hidden;
+      border: 1px solid rgba(255,255,255,.14);
+      box-shadow: var(--shadow);
+      background: rgba(255,255,255,.08);
+      position:relative;
+    }
+    .why-media img{
+      width:100%;
+      height: 520px;
+      object-fit:cover;
+    }
+    .why-media:after{
+      content:"";
+      position:absolute; inset:0;
+      background: linear-gradient(180deg, rgba(0,0,0,.10), rgba(0,0,0,.22));
+      pointer-events:none;
+    }
+
+    /* Reviews */
+    .reviews{
+      padding-top: 64px;
+    }
+    .reviews-head{
+      text-align:center;
+      margin-bottom: 22px;
+    }
+    .reviews-head h2{
+      font-family:"Playfair Display", serif;
+      margin:0 0 10px;
+      font-size: 44px;
+    }
+    .reviews-sub{
+      display:flex; align-items:center; justify-content:center;
+      gap: 12px;
+      color: rgba(255,255,255,.78);
+      font-weight:700;
+    }
+    .review-grid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 22px;
+    }
+    .review{
+      border-radius: var(--r2);
+      background: rgba(0,0,0,.34);
+      border: 1px solid rgba(255,255,255,.12);
+      box-shadow: var(--shadow2);
+      padding: 22px;
+      backdrop-filter: blur(10px);
+      min-height: 260px;
+      display:flex;
+      flex-direction:column;
+      gap: 12px;
+    }
+    .review .quote{
+      color: rgba(255,255,255,.86);
+      font-weight:600;
+      line-height:1.6;
+      flex:1;
+    }
+    .review .hr{
+      height:1px;
+      background: rgba(255,255,255,.12);
+      margin: 8px 0;
+    }
+    .review .who{
+      display:flex;
+      flex-direction:column;
+      gap:4px;
+    }
+    .review .name{font-weight:900}
+    .review .svc{color: rgba(255,255,255,.65); font-weight:700; font-size:13px}
+    .reviews-cta{
+      margin-top: 18px;
+      display:flex;
+      justify-content:center;
+    }
+
+    /* Service areas */
+    .areas{
+      padding-top: 70px;
+      padding-bottom: 44px;
+    }
+    .areas-card{
+      border-radius: var(--r2);
+      background: rgba(0,0,0,.30);
+      border: 1px solid rgba(255,255,255,.12);
+      box-shadow: var(--shadow2);
+      padding: 34px 26px;
+      backdrop-filter: blur(10px);
+      text-align:center;
+    }
+    .areas-card h2{
+      font-family:"Playfair Display", serif;
+      margin:0 0 10px;
+      font-size: 44px;
+    }
+    .areas-card p{
+      margin:0 0 18px;
+      color: var(--muted);
+      font-weight:600;
+    }
+    .chips{
+      display:flex;
+      gap: 12px;
+      justify-content:center;
+      flex-wrap:wrap;
+      margin: 18px 0 20px;
+    }
+    .chip{
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.12);
+      color: rgba(255,255,255,.86);
+      font-weight:800;
+    }
+    .areas-card .btn-primary{padding: 12px 16px}
+
+    /* Quote CTA band */
+    .quote-band{
+      background: linear-gradient(180deg, rgba(10,90,42,.98), rgba(8,63,31,.98));
+      border-top: 1px solid rgba(255,255,255,.10);
+      border-bottom: 1px solid rgba(255,255,255,.10);
+      padding: 46px 18px;
+    }
+    .quote-inner{
+      max-width: var(--max);
+      margin:0 auto;
+      text-align:center;
+    }
+    .quote-inner h2{
+      font-family:"Playfair Display", serif;
+      margin:0 0 10px;
+      font-size: 48px;
+    }
+    .quote-inner p{
+      margin:0 auto 20px;
+      max-width: 620px;
+      color: rgba(255,255,255,.80);
+      font-weight:700;
+      line-height:1.6;
+    }
+    .quote-inner .hero-ctas{justify-content:center}
+
+    /* Footer */
+    footer{
+      padding: 46px 18px 26px;
+      background: rgba(0,0,0,.62);
+      border-top: 1px solid rgba(255,255,255,.10);
+      backdrop-filter: blur(10px);
+    }
+    .foot-grid{
+      max-width: var(--max);
+      margin:0 auto;
+      display:grid;
+      grid-template-columns: 1.2fr 1fr 1fr 1.1fr;
+      gap: 18px;
+    }
+    .foot-brand{
+      display:flex; flex-direction:column; gap: 12px;
+    }
+    .foot-brand .brandline{
+      display:flex; gap:10px; align-items:center;
+      font-family:"Playfair Display", serif;
+      font-size: 26px;
+      font-weight:700;
+    }
+    .foot-brand p{
+      margin:0;
+      color: rgba(255,255,255,.70);
+      font-weight:600;
+      line-height:1.6;
+      max-width: 340px;
+    }
+    .foot-col h4{
+      margin: 8px 0 12px;
+      font-weight:900;
+      letter-spacing:.12em;
+      font-size: 12px;
+      color: rgba(255,255,255,.86);
+    }
+    .foot-col a{
+      display:block;
+      padding: 8px 0;
+      color: rgba(255,255,255,.70);
+      font-weight:700;
+    }
+    .foot-col a:hover{color:#fff}
+    .foot-bottom{
+      max-width: var(--max);
+      margin: 24px auto 0;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255,255,255,.10);
+      color: rgba(255,255,255,.60);
+      font-weight:700;
+      text-align:center;
+    }
+
+    /* Small helper */
+    .glass{
+      background: rgba(0,0,0,.30);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: var(--r2);
+      backdrop-filter: blur(10px);
+      box-shadow: var(--shadow2);
+    }
+
+    /* Responsive */
+    @media (max-width: 980px){
+      .nav-links{display:none}
+      .hamburger{display:inline-flex}
+      .mobile-drawer.show{display:block}
+      .brand{min-width:auto}
+      .hero-grid{grid-template-columns: 1fr; gap: 18px}
+      .media-card img{height: 360px}
+      .steps-grid{grid-template-columns:1fr; gap:10px}
+      .cards{grid-template-columns: 1fr; }
+      .review-grid{grid-template-columns:1fr}
+      .stats-grid{grid-template-columns: 1fr 1fr; }
+      .why-grid{grid-template-columns:1fr}
+      .why-media img{height: 420px}
+      .foot-grid{grid-template-columns: 1fr 1fr}
+    }
+    @media (max-width: 520px){
+      .stats-grid{grid-template-columns: 1fr; }
+      .feature-grid{grid-template-columns:1fr}
+      .nav-right .phone{display:none}
+      .rating-badge{left:16px; right:16px; max-width:none}
+    }
+  </style>
 </head>
-<body class="min-h-screen bg-white text-slate-900">
-<!-- hero-section.html -->
-<section class="relative overflow-hidden bg-black/40 backdrop-blur-sm">
-      <div class="relative mx-auto max-w-7xl px-4 py-20 lg:px-8 lg:py-32">
-        <div class="grid gap-12 lg:grid-cols-2 lg:gap-8 items-center">
-          <div>
-            <h1 class="font-serif text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl text-balance">
-              Professional Tree Removal & Tree Care
-            </h1>
-            <p class="mt-6 text-lg text-white/90 leading-relaxed max-w-xl">
-              Safe, clean, fast service from a local crew you can trust. We handle everything from routine trimming to
-              emergency storm damage—with full cleanup included.
-            </p>
 
-            
-            <div class="mt-8 grid grid-cols-2 gap-4">
-              <div class="flex items-center gap-2 text-sm font-medium text-white">
-                <span data-component='Shield'></span>
-                Licensed & Insured
-              </div>
-              <div class="flex items-center gap-2 text-sm font-medium text-white">
-                <span data-component='Clock'></span>
-                Fast Scheduling
-              </div>
-              <div class="flex items-center gap-2 text-sm font-medium text-white">
-                <span data-component='Sparkles'></span>
-                Cleanup Included
-              </div>
-              <div class="flex items-center gap-2 text-sm font-medium text-white">
-                <span data-component='Phone'></span>
-                Free Estimates
-              </div>
-            </div>
+<body>
+  <div class="page-bg" aria-hidden="true"></div>
+  <div class="page-vignette" aria-hidden="true"></div>
 
-            <div class="mt-10 flex flex-col sm:flex-row gap-4">
-              <button asChild class="text-base">
-                <a href="/contact">Get a Free Quote</a>
-              </button>
-              <button
-               
-               
-                asChild
-                class="text-base bg-transparent border-white text-white hover:bg-white/10"
-              >
-                <a href="tel:+15551234567" class="flex items-center gap-2">
-                  <span data-component='Phone'></span>
-                  Call (555) 123-4567
-                </a>
-              </button>
-            </div>
-          </div>
+  <!-- NAV -->
+  <header class="nav-wrap">
+    <nav class="nav" aria-label="Primary">
+      <a class="brand" href="#home">
+        <span class="mark" aria-hidden="true">
+          <!-- tree icon -->
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+            <path d="M12 2c2.8 2.4 4.5 4.6 5.3 6.7 1.7.3 3.2 1.6 3.7 3.3.7 2.6-.9 5.3-3.6 6a5.9 5.9 0 0 1-1.8.2H8.4a5.8 5.8 0 0 1-1.8-.2c-2.7-.7-4.3-3.4-3.6-6 .5-1.7 2-3 3.7-3.3C7.5 6.6 9.2 4.4 12 2Z" stroke="rgba(10,90,42,.95)" stroke-width="1.5"/>
+            <path d="M12 12v10" stroke="rgba(10,90,42,.95)" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M9 22h6" stroke="rgba(10,90,42,.95)" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <span class="name">Ducky's Tree Service</span>
+      </a>
 
-          <div class="relative">
-            <div class="aspect-[4/3] overflow-hidden rounded-lg shadow-2xl">
-              <img
-                src="/professional-tree-service-worker-in-bucket-truck-c.jpg"
-                alt="Ducky's Tree Service crew working on a tree removal job"
-                class="h-full w-full object-cover"
-              />
-            </div>
-            <div class="absolute -bottom-6 -left-6 rounded-lg bg-card p-4 shadow-lg border border-border">
-              <div class="flex items-center gap-3">
-                <div class="flex -space-x-2">
-                  <div class="h-10 w-10 rounded-full bg-primary flex items-center justify-center text-primary-foreground font-bold">
-                    5
-                  </div>
-                </div>
-                <div>
-                  <div class="flex text-accent">★★★★★</div>
-                  <p class="text-sm text-muted-foreground">200+ Happy Customers</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#areas">Service Areas</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
       </div>
-    </section>
 
-<!-- stats-divider.html -->
-<section class="relative py-16 bg-primary">
-      <div class="container mx-auto px-4">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-          </div>
-              <div class="text-white/80 text-sm md:text-base"></div>
-            </div>
-          ))}
-        </div>
+      <div class="nav-right">
+        <a class="phone" href="tel:+15551234567" aria-label="Call (555) 123-4567">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+            <path d="M6.6 10.8c1.6 3.2 3.4 5 6.6 6.6l2.2-2.2c.3-.3.8-.4 1.2-.2 1.3.5 2.7.8 4.1.8.5 0 .9.4.9.9V20c0 .5-.4.9-.9.9C10.7 20.9 3.1 13.3 3.1 4.2c0-.5.4-.9.9-.9H6.1c.5 0 .9.4.9.9 0 1.4.3 2.8.8 4.1.1.4 0 .9-.2 1.2l-2 2.3Z" stroke="rgba(19,32,21,.88)" stroke-width="1.6" stroke-linejoin="round"/>
+          </svg>
+          <span>(555) 123-4567</span>
+        </a>
+
+        <a class="btn btn-primary" href="#quote">Get Free Quote</a>
+
+        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+            <path d="M4 7h16M4 12h16M4 17h16" stroke="rgba(19,32,21,.88)" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </button>
       </div>
-    </section>
+    </nav>
 
-<!-- services-grid.html -->
-<section class="py-16 lg:py-24 relative overflow-hidden bg-black/40 backdrop-blur-sm">
-      <div class="relative mx-auto max-w-7xl px-4 lg:px-8">
-        <div class="text-center">
-          <h2 class="font-serif text-3xl font-bold tracking-tight text-white sm:text-4xl">Our Services</h2>
-          <p class="mt-4 text-lg text-white/80 max-w-2xl mx-auto">
-            From routine maintenance to emergency response, we have you covered.
+    <div class="mobile-drawer" id="drawer">
+      <a href="#home">Home</a>
+      <a href="#services">Services</a>
+      <a href="#areas">Service Areas</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <main id="home">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-left">
+          <div class="kicker">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M12 2l3 7 7 .5-5.5 4.5 2 7-6.5-4-6.5 4 2-7L2 9.5 9 9l3-7Z" stroke="rgba(255,255,255,.8)" stroke-width="1.4" stroke-linejoin="round"/>
+            </svg>
+            <span>Local • Safety-first • Cleanup included</span>
+          </div>
+
+          <h1>Professional<br/>Tree Removal<br/>&amp; Tree Care</h1>
+
+          <p class="lead">
+            Safe, clean, fast service from a local crew you can trust. We handle everything from
+            routine trimming to emergency storm damage—with full cleanup included.
           </p>
+
+          <div class="hero-pills" aria-label="Highlights">
+            <div class="pill">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M12 2l8 4v6c0 5-3.5 9.5-8 10-4.5-.5-8-5-8-10V6l8-4Z" stroke="rgba(255,255,255,.86)" stroke-width="1.5"/>
+                <path d="M8.5 12l2.2 2.2 4.8-5" stroke="rgba(255,255,255,.86)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              Licensed &amp; Insured
+            </div>
+            <div class="pill">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M12 7v5l3 2" stroke="rgba(255,255,255,.86)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" stroke="rgba(255,255,255,.86)" stroke-width="1.5"/>
+              </svg>
+              Fast Scheduling
+            </div>
+            <div class="pill">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M4 19h16" stroke="rgba(255,255,255,.86)" stroke-width="1.6" stroke-linecap="round"/>
+                <path d="M7 17l10-10" stroke="rgba(255,255,255,.86)" stroke-width="1.6" stroke-linecap="round"/>
+                <path d="M9 5l4 4" stroke="rgba(255,255,255,.86)" stroke-width="1.6" stroke-linecap="round"/>
+              </svg>
+              Cleanup Included
+            </div>
+            <div class="pill">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M21 11.5a8.5 8.5 0 1 1-3.1-6.6" stroke="rgba(255,255,255,.86)" stroke-width="1.5" stroke-linecap="round"/>
+                <path d="M22 4v6h-6" stroke="rgba(255,255,255,.86)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              Free Estimates
+            </div>
+          </div>
+
+          <div class="hero-ctas">
+            <a class="btn btn-primary" href="#quote">Get a Free Quote</a>
+            <a class="btn btn-outline" href="tel:+15551234567">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M6.6 10.8c1.6 3.2 3.4 5 6.6 6.6l2.2-2.2c.3-.3.8-.4 1.2-.2 1.3.5 2.7.8 4.1.8.5 0 .9.4.9.9V20c0 .5-.4.9-.9.9C10.7 20.9 3.1 13.3 3.1 4.2c0-.5.4-.9.9-.9H6.1c.5 0 .9.4.9.9 0 1.4.3 2.8.8 4.1.1.4 0 .9-.2 1.2l-2 2.3Z" stroke="rgba(255,255,255,.92)" stroke-width="1.6" stroke-linejoin="round"/>
+              </svg>
+              Call (555) 123-4567
+            </a>
+          </div>
         </div>
 
-        <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          <a
-              key=Tree Removal
-              href=/services#tree-removal
-              class="group relative overflow-hidden rounded-xl bg-card border border-border/50 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1"
-            >
-              <div class="relative h-48 overflow-hidden">
-                <span data-component='Image'></span>
-                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+        <div class="hero-right">
+          <div class="media-card" aria-label="Tree crew photo">
+            <img alt="Tree worker in bucket truck cutting a branch" src="https://images.unsplash.com/photo-1603398938378-c9b0c2a4b0a8?auto=format&fit=crop&w=1600&q=80">
+            <div class="rating-badge" aria-label="Rating badge">
+              <div class="rating-dot">5</div>
+              <div>
+                <div class="stars" aria-hidden="true">
+                  <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                </div>
+                <div class="rating-text">200+ Happy Customers</div>
+                <div class="rating-sub">Fast quotes • Clean finish</div>
               </div>
-              <div class="absolute bottom-0 left-0 right-0 p-5 text-white">
-                <h3 class="font-serif text-xl font-bold mb-1">Tree Removal</h3>
-                <p class="text-sm text-white/90 line-clamp-2">Safe removal of hazardous, dead, or unwanted trees from any location.</p>
-                <span class="mt-2 inline-block text-sm font-semibold text-primary-foreground/90 group-hover:underline">
-                  Learn more →
-                </span>
-              </div>
-            </a>
-<a
-              key=Tree Trimming
-              href=/services#tree-trimming
-              class="group relative overflow-hidden rounded-xl bg-card border border-border/50 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1"
-            >
-              <div class="relative h-48 overflow-hidden">
-                <span data-component='Image'></span>
-                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-              </div>
-              <div class="absolute bottom-0 left-0 right-0 p-5 text-white">
-                <h3 class="font-serif text-xl font-bold mb-1">Tree Trimming</h3>
-                <p class="text-sm text-white/90 line-clamp-2">Professional pruning for health, clearance, shape, and safety.</p>
-                <span class="mt-2 inline-block text-sm font-semibold text-primary-foreground/90 group-hover:underline">
-                  Learn more →
-                </span>
-              </div>
-            </a>
-<a
-              key=Stump Grinding
-              href=/services#stump-grinding
-              class="group relative overflow-hidden rounded-xl bg-card border border-border/50 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1"
-            >
-              <div class="relative h-48 overflow-hidden">
-                <span data-component='Image'></span>
-                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-              </div>
-              <div class="absolute bottom-0 left-0 right-0 p-5 text-white">
-                <h3 class="font-serif text-xl font-bold mb-1">Stump Grinding</h3>
-                <p class="text-sm text-white/90 line-clamp-2">Complete stump removal with a clean, level finish.</p>
-                <span class="mt-2 inline-block text-sm font-semibold text-primary-foreground/90 group-hover:underline">
-                  Learn more →
-                </span>
-              </div>
-            </a>
-<a
-              key=Emergency Service
-              href=/services#emergency
-              class="group relative overflow-hidden rounded-xl bg-card border border-border/50 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1"
-            >
-              <div class="relative h-48 overflow-hidden">
-                <span data-component='Image'></span>
-                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-              </div>
-              <div class="absolute bottom-0 left-0 right-0 p-5 text-white">
-                <h3 class="font-serif text-xl font-bold mb-1">Emergency Service</h3>
-                <p class="text-sm text-white/90 line-clamp-2">24/7 response for urgent tree hazards and fallen limbs.</p>
-                <span class="mt-2 inline-block text-sm font-semibold text-primary-foreground/90 group-hover:underline">
-                  Learn more →
-                </span>
-              </div>
-            </a>
-<a
-              key=Storm Damage
-              href=/services#storm-damage
-              class="group relative overflow-hidden rounded-xl bg-card border border-border/50 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1"
-            >
-              <div class="relative h-48 overflow-hidden">
-                <span data-component='Image'></span>
-                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-              </div>
-              <div class="absolute bottom-0 left-0 right-0 p-5 text-white">
-                <h3 class="font-serif text-xl font-bold mb-1">Storm Damage</h3>
-                <p class="text-sm text-white/90 line-clamp-2">Fast cleanup and restoration after severe weather events.</p>
-                <span class="mt-2 inline-block text-sm font-semibold text-primary-foreground/90 group-hover:underline">
-                  Learn more →
-                </span>
-              </div>
-            </a>
-<a
-              key=Lot Clearing
-              href=/services#lot-clearing
-              class="group relative overflow-hidden rounded-xl bg-card border border-border/50 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1"
-            >
-              <div class="relative h-48 overflow-hidden">
-                <span data-component='Image'></span>
-                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-              </div>
-              <div class="absolute bottom-0 left-0 right-0 p-5 text-white">
-                <h3 class="font-serif text-xl font-bold mb-1">Lot Clearing</h3>
-                <p class="text-sm text-white/90 line-clamp-2">Brush removal and property preparation for any project.</p>
-                <span class="mt-2 inline-block text-sm font-semibold text-primary-foreground/90 group-hover:underline">
-                  Learn more →
-                </span>
-              </div>
-            </a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-<!-- why-choose-us.html -->
-<section class="relative py-16 lg:py-24 bg-black/40 backdrop-blur-sm">
-      <div class="relative mx-auto max-w-7xl px-4 lg:px-8">
-        <div class="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
+    <!-- Steps bar (green) -->
+    <section class="steps" aria-label="How it works">
+      <div class="steps-grid">
+        <div class="step">
+          <div class="icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+              <path d="M7 3h10v18H7z" stroke="rgba(255,255,255,.90)" stroke-width="1.6"/>
+              <path d="M9 7h6M9 11h6M9 15h6" stroke="rgba(255,255,255,.82)" stroke-width="1.6" stroke-linecap="round"/>
+            </svg>
+          </div>
           <div>
-            <h2 class="font-serif text-3xl font-bold tracking-tight text-white sm:text-4xl">
-              Why Choose Ducky&apos;s Tree Service?
-            </h2>
-            <p class="mt-4 text-lg text-white/80">
-              We&apos;re not just another tree company. We&apos;re your neighbors, committed to keeping your property
-              safe and beautiful.
-            </p>
+            <div class="meta">STEP 1</div>
+            <h4>Request a Quote</h4>
+            <p>Call us or fill out our simple form. We respond quickly.</p>
+          </div>
+        </div>
 
-            <div class="mt-10 grid gap-6 sm:grid-cols-2">
-              <!-- TODO: render features.map(...) -->
+        <div class="step">
+          <div class="icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+              <path d="M4 8l4-4h8l4 4v12H4V8Z" stroke="rgba(255,255,255,.90)" stroke-width="1.6" stroke-linejoin="round"/>
+              <path d="M9 14l2 2 4-5" stroke="rgba(255,255,255,.88)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div>
+            <div class="meta">STEP 2</div>
+            <h4>We Assess</h4>
+            <p>Send us photos or we'll come on-site to evaluate the job.</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+              <path d="M20 6L9 17l-5-5" stroke="rgba(255,255,255,.92)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div>
+            <div class="meta">STEP 3</div>
+            <h4>Job Complete</h4>
+            <p>We complete the work professionally with full cleanup included.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-title">
+          <h2>Our Services</h2>
+          <p>From routine maintenance to emergency response, we have you covered.</p>
+        </div>
+
+        <div class="cards" role="list">
+          <a class="card" role="listitem" href="#quote">
+            <img alt="Tree removal" src="https://images.unsplash.com/photo-1617731593392-8c77f7f0d809?auto=format&fit=crop&w=1600&q=80">
+            <div class="content">
+              <h3>Tree Removal</h3>
+              <p>Safe removal of hazardous, dead, or unwanted trees from any location.</p>
+              <span class="more">Learn more →</span>
             </div>
-          </div>
+          </a>
 
-          <div class="relative">
-            <div class="aspect-square overflow-hidden rounded-lg shadow-2xl ring-1 ring-white/10">
-              <img
-                src="/arborist-climbing-tree-with-safety-gear-profession.jpg"
-                alt="Professional arborist safely working on a tree"
-                class="h-full w-full object-cover"
-              />
+          <a class="card" role="listitem" href="#quote">
+            <img alt="Tree trimming" src="https://images.unsplash.com/photo-1603398938471-6b30c7d2b5cf?auto=format&fit=crop&w=1600&q=80">
+            <div class="content">
+              <h3>Tree Trimming</h3>
+              <p>Professional pruning for health, clearance, shape, and safety.</p>
+              <span class="more">Learn more →</span>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
+          </a>
 
-<!-- how-it-works.html -->
-<section class="bg-primary py-12 lg:py-16">
-      <div class="mx-auto max-w-7xl px-4 lg:px-8">
-        <div class="grid gap-8 md:grid-cols-3">
-          
-                </div>
-                <h3 class="font-semibold text-primary-foreground"></h3>
-                <p class="mt-1 text-sm text-primary-foreground/80"></p>
-              </div>
+          <a class="card" role="listitem" href="#quote">
+            <img alt="Stump grinding" src="https://images.unsplash.com/photo-1601121141527-06b2d1a99a6d?auto=format&fit=crop&w=1600&q=80">
+            <div class="content">
+              <h3>Stump Grinding</h3>
+              <p>Complete stump removal with a clean, level finish.</p>
+              <span class="more">Learn more →</span>
             </div>
-          ))}
+          </a>
+
+          <a class="card" role="listitem" href="#quote">
+            <img alt="Emergency service" src="https://images.unsplash.com/photo-1542300051-3c0b8a4e83a7?auto=format&fit=crop&w=1600&q=80">
+            <div class="content">
+              <h3>Emergency Service</h3>
+              <p>24/7 response for urgent tree hazards and fallen limbs.</p>
+              <span class="more">Learn more →</span>
+            </div>
+          </a>
+
+          <a class="card" role="listitem" href="#quote">
+            <img alt="Storm damage" src="https://images.unsplash.com/photo-1562004760-aceed7bb0fe3?auto=format&fit=crop&w=1600&q=80">
+            <div class="content">
+              <h3>Storm Damage</h3>
+              <p>Fast cleanup and restoration after severe weather events.</p>
+              <span class="more">Learn more →</span>
+            </div>
+          </a>
+
+          <a class="card" role="listitem" href="#quote">
+            <img alt="Lot clearing" src="https://images.unsplash.com/photo-1591355599405-c2b5d3d8f3c0?auto=format&fit=crop&w=1600&q=80">
+            <div class="content">
+              <h3>Lot Clearing</h3>
+              <p>Brush removal and property preparation for any project.</p>
+              <span class="more">Learn more →</span>
+            </div>
+          </a>
         </div>
       </div>
     </section>
 
-<!-- reviews-preview.html -->
-<section class="py-16 lg:py-24 bg-black/40 backdrop-blur-sm">
-      <div class="mx-auto max-w-7xl px-4 lg:px-8">
-        <div class="text-center">
-          <h2 class="font-serif text-3xl font-bold tracking-tight text-white sm:text-4xl">
-            What Our Customers Say
-          </h2>
-          <div class="mt-4 flex items-center justify-center gap-1">
-            
-            <span class="ml-2 text-lg font-semibold text-white">5.0</span>
-            <span class="text-white/70 ml-1">from 200+ reviews</span>
-          </div>
-        </div>
-
-        <div class="mt-12 grid gap-6 md:grid-cols-3">
-          <Card key=Sarah M. class="bg-white/10 backdrop-blur-sm border-white/20">
-              <CardContent class="pt-6">
-                <div class="flex gap-0.5 mb-4">
-                  
-                </div>
-                <p class="text-white leading-relaxed">&ldquo;Ducky&#x27;s team removed a massive oak that was threatening our roof. Fast, professional, and the cleanup was spotless. Highly recommend!&rdquo;</p>
-                <div class="mt-4 pt-4 border-t border-white/20">
-                  <p class="font-semibold text-white">Sarah M.</p>
-                  <p class="text-sm text-white/70">Tree Removal</p>
-                </div>
-              </CardContent>
-            </Card>
-<Card key=Mike T. class="bg-white/10 backdrop-blur-sm border-white/20">
-              <CardContent class="pt-6">
-                <div class="flex gap-0.5 mb-4">
-                  
-                </div>
-                <p class="text-white leading-relaxed">&ldquo;Called them for emergency storm damage. They were there within hours and had everything cleared by the end of the day. Lifesavers!&rdquo;</p>
-                <div class="mt-4 pt-4 border-t border-white/20">
-                  <p class="font-semibold text-white">Mike T.</p>
-                  <p class="text-sm text-white/70">Storm Damage</p>
-                </div>
-              </CardContent>
-            </Card>
-<Card key=Jennifer K. class="bg-white/10 backdrop-blur-sm border-white/20">
-              <CardContent class="pt-6">
-                <div class="flex gap-0.5 mb-4">
-                  
-                </div>
-                <p class="text-white leading-relaxed">&ldquo;Best stump grinding service in the area. Fair price, quick work, and you couldn&#x27;t even tell there was a stump there. Thank you!&rdquo;</p>
-                <div class="mt-4 pt-4 border-t border-white/20">
-                  <p class="font-semibold text-white">Jennifer K.</p>
-                  <p class="text-sm text-white/70">Stump Grinding</p>
-                </div>
-              </CardContent>
-            </Card>
-        </div>
-
-        <div class="mt-10 text-center">
-          <button asChild class="border-white text-white hover:bg-white/10 bg-transparent">
-            <a href="/reviews">Read More Reviews</a>
-          </button>
+    <!-- Trio (matches the mid-scroll screenshot with 3 big cards) -->
+    <section class="section trio">
+      <div class="container">
+        <div class="cards">
+          <a class="card" href="#quote">
+            <img alt="Emergency crew clearing fallen tree" src="https://images.unsplash.com/photo-1509030449524-9ce1c54a3f04?auto=format&fit=crop&w=1600&q=80">
+            <div class="content">
+              <h3>Emergency Service</h3>
+              <p>24/7 response for urgent tree hazards and fallen limbs.</p>
+              <span class="more">Learn more →</span>
+            </div>
+          </a>
+          <a class="card" href="#quote">
+            <img alt="Storm cleanup" src="https://images.unsplash.com/photo-1520975916090-3105956dac38?auto=format&fit=crop&w=1600&q=80">
+            <div class="content">
+              <h3>Storm Damage</h3>
+              <p>Fast cleanup and restoration after severe weather events.</p>
+              <span class="more">Learn more →</span>
+            </div>
+          </a>
+          <a class="card" href="#quote">
+            <img alt="Excavator clearing land" src="https://images.unsplash.com/photo-1516478177764-9fe5bd7e9717?auto=format&fit=crop&w=1600&q=80">
+            <div class="content">
+              <h3>Lot Clearing</h3>
+              <p>Brush removal and property preparation for any project.</p>
+              <span class="more">Learn more →</span>
+            </div>
+          </a>
         </div>
       </div>
     </section>
 
-<!-- service-areas-teaser (2).html -->
-<section class="py-16 lg:py-24 bg-black/40 backdrop-blur-sm">
-      <div class="mx-auto max-w-7xl px-4 lg:px-8">
-        <div class="text-center">
-          <div class="inline-flex items-center justify-center h-12 w-12 rounded-full bg-white/10 text-white mb-4">
-            <span data-component='MapPin'></span>
-          </div>
-          <h2 class="font-serif text-3xl font-bold tracking-tight text-white sm:text-4xl">
-            Proudly Serving Your Area
-          </h2>
-          <p class="mt-4 text-lg text-white/70">
-            Local service means faster response times and reliable scheduling.
-          </p>
-        </div>
-
-        <div class="mt-10 flex flex-wrap justify-center gap-3">
-          <span
-              key=Springfield
-              class="inline-flex items-center rounded-full bg-white/10 border border-white/20 px-4 py-2 text-sm font-medium text-white"
-            >
-              Springfield
-            </span>
-<span
-              key=Oakville
-              class="inline-flex items-center rounded-full bg-white/10 border border-white/20 px-4 py-2 text-sm font-medium text-white"
-            >
-              Oakville
-            </span>
-<span
-              key=Maplewood
-              class="inline-flex items-center rounded-full bg-white/10 border border-white/20 px-4 py-2 text-sm font-medium text-white"
-            >
-              Maplewood
-            </span>
-<span
-              key=Cedar Grove
-              class="inline-flex items-center rounded-full bg-white/10 border border-white/20 px-4 py-2 text-sm font-medium text-white"
-            >
-              Cedar Grove
-            </span>
-<span
-              key=Pine Valley
-              class="inline-flex items-center rounded-full bg-white/10 border border-white/20 px-4 py-2 text-sm font-medium text-white"
-            >
-              Pine Valley
-            </span>
-<span
-              key=Willow Creek
-              class="inline-flex items-center rounded-full bg-white/10 border border-white/20 px-4 py-2 text-sm font-medium text-white"
-            >
-              Willow Creek
-            </span>
-          <span class="inline-flex items-center rounded-full bg-primary/20 border border-primary/30 px-4 py-2 text-sm font-medium text-primary">
-            + More
-          </span>
-        </div>
-
-        <div class="mt-10 text-center">
-          <button asChild>
-            <a href="/service-areas">See All Service Areas</a>
-          </button>
-        </div>
-      </div>
-    </section>
-
-<!-- cta-band.html -->
-<section class="bg-primary py-16 lg:py-20">
-      <div class="mx-auto max-w-7xl px-4 lg:px-8 text-center">
-        <h2 class="font-serif text-3xl font-bold tracking-tight text-primary-foreground sm:text-4xl">
-          Need a Quote Today?
-        </h2>
-        <p class="mt-4 text-lg text-primary-foreground/80 max-w-2xl mx-auto">
-          Get a free, no-obligation estimate for your tree service needs. We respond fast and work around your schedule.
-        </p>
-        <div class="mt-10 flex flex-col sm:flex-row justify-center gap-4">
-          <button asChild class="text-base">
-            <a href="/contact">Get a Free Quote</a>
-          </button>
-          <button
-           
-           
-            asChild
-            class="text-base bg-transparent text-primary-foreground border-primary-foreground/50 hover:bg-primary-foreground/10 hover:text-primary-foreground"
-          >
-            <a href="tel:+15551234567" class="flex items-center gap-2">
-              <span data-component='Phone'></span>
-              Call Now
-            </a>
-          </button>
-        </div>
-      </div>
-    </section>
-</body>
-</html>
+    <!-- Stats bar -->
+    <section class="stats" aria-label="Company stats">
+      <div class="stats-grid">
+        <div class="stat">
+          <div class="ico" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+              <path d="M12 2c2.8 2.4 4.5 4.6 5.3 6.7
