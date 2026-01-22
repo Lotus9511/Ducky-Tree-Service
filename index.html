@@ -46,16 +46,28 @@
     img{max-width:100%;display:block}
 
     /* Background */
-    .page-bg{
-      position:fixed; inset:0;
-      background:
-        linear-gradient(180deg, rgba(0,0,0,.65), rgba(0,0,0,.72)),
-        url("https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=2400&q=70");
-      background-size:cover;
-      background-position:center;
-      filter:saturate(1.05);
-      transform:scale(1.02);
-      z-index:-2;
+    <!-- Replace your current .page-bg in the <style> with this forest version -->
+
+<style>
+  .page-bg{
+    position:fixed; inset:0;
+
+    /* forest background */
+    background:
+      /* dark overlay for readability */
+      linear-gradient(180deg, rgba(0,0,0,.62), rgba(0,0,0,.78)),
+      /* forest image */
+      url("https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=2400&q=80");
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+    filter:saturate(1.1) contrast(1.05);
+    transform:scale(1.02);
+    z-index:-2;
+  }
+</style>
     }
     .page-vignette{
       position:fixed; inset:-2px;
