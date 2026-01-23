@@ -360,16 +360,19 @@
       font-weight:600;
     }
 
+    /* ✅ FIX: ensure equal height cards across the grid */
     .cards{
       display:grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 18px;
+      align-items:stretch;
+      grid-auto-rows: 240px; /* all cards same vertical size */
     }
     .card{
+      height: 240px; /* lock height */
       border-radius: var(--r2);
       overflow:hidden;
       position:relative;
-      min-height: 210px;
       border: 1px solid rgba(255,255,255,.14);
       box-shadow: var(--shadow2);
       background: rgba(255,255,255,.06);
@@ -745,7 +748,7 @@
       .hero-grid{grid-template-columns: 1fr; gap: 18px}
       .media-card img{height: 360px}
       .steps-grid{grid-template-columns:1fr; gap:10px}
-      .cards{grid-template-columns: 1fr; }
+      .cards{grid-template-columns: 1fr; grid-auto-rows: 240px;}
       .review-grid{grid-template-columns:1fr}
       .stats-grid{grid-template-columns: 1fr 1fr; }
       .why-grid{grid-template-columns:1fr}
@@ -952,8 +955,9 @@
         </div>
 
         <div class="cards" role="list">
+          <!-- ✅ Images now match services -->
           <a class="card" role="listitem" href="#quote">
-            <img alt="Tree removal" src="https://images.unsplash.com/photo-1617731593392-8c77f7f0d809?auto=format&fit=crop&w=1600&q=80">
+            <img alt="Tree removal (chainsaw cutting trunk)" src="https://images.unsplash.com/photo-1603398938449-6f7dd0fb9e0a?auto=format&fit=crop&w=1600&q=80">
             <div class="content">
               <h3>Tree Removal</h3>
               <p>Safe removal of hazardous, dead, or unwanted trees from any location.</p>
@@ -962,7 +966,7 @@
           </a>
 
           <a class="card" role="listitem" href="#quote">
-            <img alt="Tree trimming" src="https://images.unsplash.com/photo-1603398938471-6b30c7d2b5cf?auto=format&fit=crop&w=1600&q=80">
+            <img alt="Tree trimming (pruning branches)" src="https://images.unsplash.com/photo-1603398938471-6b30c7d2b5cf?auto=format&fit=crop&w=1600&q=80">
             <div class="content">
               <h3>Tree Trimming</h3>
               <p>Professional pruning for health, clearance, shape, and safety.</p>
@@ -971,7 +975,7 @@
           </a>
 
           <a class="card" role="listitem" href="#quote">
-            <img alt="Stump grinding" src="https://images.unsplash.com/photo-1601121141527-06b2d1a99a6d?auto=format&fit=crop&w=1600&q=80">
+            <img alt="Stump grinding machine" src="https://images.unsplash.com/photo-1601121141527-06b2d1a99a6d?auto=format&fit=crop&w=1600&q=80">
             <div class="content">
               <h3>Stump Grinding</h3>
               <p>Complete stump removal with a clean, level finish.</p>
@@ -980,7 +984,7 @@
           </a>
 
           <a class="card" role="listitem" href="#quote">
-            <img alt="Emergency service" src="https://images.unsplash.com/photo-1542300051-3c0b8a4e83a7?auto=format&fit=crop&w=1600&q=80">
+            <img alt="Emergency tree service clearing fallen tree" src="https://images.unsplash.com/photo-1520975916090-3105956dac38?auto=format&fit=crop&w=1600&q=80">
             <div class="content">
               <h3>Emergency Service</h3>
               <p>24/7 response for urgent tree hazards and fallen limbs.</p>
@@ -989,7 +993,7 @@
           </a>
 
           <a class="card" role="listitem" href="#quote">
-            <img alt="Storm damage" src="https://images.unsplash.com/photo-1562004760-aceed7bb0fe3?auto=format&fit=crop&w=1600&q=80">
+            <img alt="Storm damage cleanup (fallen branches)" src="https://images.unsplash.com/photo-1562004760-aceed7bb0fe3?auto=format&fit=crop&w=1600&q=80">
             <div class="content">
               <h3>Storm Damage</h3>
               <p>Fast cleanup and restoration after severe weather events.</p>
@@ -998,7 +1002,7 @@
           </a>
 
           <a class="card" role="listitem" href="#quote">
-            <img alt="Lot clearing" src="https://images.unsplash.com/photo-1591355599405-c2b5d3d8f3c0?auto=format&fit=crop&w=1600&q=80">
+            <img alt="Lot clearing with heavy machinery" src="https://images.unsplash.com/photo-1516478177764-9fe5bd7e9717?auto=format&fit=crop&w=1600&q=80">
             <div class="content">
               <h3>Lot Clearing</h3>
               <p>Brush removal and property preparation for any project.</p>
@@ -1014,7 +1018,7 @@
       <div class="container">
         <div class="cards">
           <a class="card" href="#quote">
-            <img alt="Emergency crew clearing fallen tree" src="https://images.unsplash.com/photo-1509030449524-9ce1c54a3f04?auto=format&fit=crop&w=1600&q=80">
+            <img alt="Emergency crew clearing fallen tree" src="https://images.unsplash.com/photo-1542300051-3c0b8a4e83a7?auto=format&fit=crop&w=1600&q=80">
             <div class="content">
               <h3>Emergency Service</h3>
               <p>24/7 response for urgent tree hazards and fallen limbs.</p>
@@ -1022,7 +1026,7 @@
             </div>
           </a>
           <a class="card" href="#quote">
-            <img alt="Storm cleanup" src="https://images.unsplash.com/photo-1520975916090-3105956dac38?auto=format&fit=crop&w=1600&q=80">
+            <img alt="Storm cleanup team" src="https://images.unsplash.com/photo-1509030449524-9ce1c54a3f04?auto=format&fit=crop&w=1600&q=80">
             <div class="content">
               <h3>Storm Damage</h3>
               <p>Fast cleanup and restoration after severe weather events.</p>
@@ -1030,7 +1034,7 @@
             </div>
           </a>
           <a class="card" href="#quote">
-            <img alt="Excavator clearing land" src="https://images.unsplash.com/photo-1516478177764-9fe5bd7e9717?auto=format&fit=crop&w=1600&q=80">
+            <img alt="Excavator clearing land" src="https://images.unsplash.com/photo-1591355599405-c2b5d3d8f3c0?auto=format&fit=crop&w=1600&q=80">
             <div class="content">
               <h3>Lot Clearing</h3>
               <p>Brush removal and property preparation for any project.</p>
@@ -1255,4 +1259,6 @@
     <section class="section areas" id="areas">
       <div class="container">
         <div class="areas-card">
-          <div style="display:flex
+          <div style="display:flex;justify-content:center; margin-bottom:10px; opacity:.9" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+              <path d="M12 21s7-5 7-11a7 7 0 1 0-14 0c0 6 7 11
