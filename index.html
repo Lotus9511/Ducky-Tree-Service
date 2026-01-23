@@ -532,7 +532,7 @@
     }
     .quote-inner .hero-ctas{justify-content:center}
 
-    /* Contact block */
+    /* Contact form */
     .glass{
       background: rgba(0,0,0,.30);
       border: 1px solid rgba(255,255,255,.12);
@@ -540,6 +540,38 @@
       backdrop-filter: blur(10px);
       box-shadow: var(--shadow2);
     }
+    .contact-wrap{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      padding: 26px;
+    }
+    .contact-wrap h3{
+      margin: 0 0 10px;
+      font-family:"Playfair Display", serif;
+      font-size: 34px;
+    }
+    .contact-wrap p{margin:0 0 14px; color: var(--muted); font-weight:700; line-height:1.6}
+    .form{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .field{display:flex; flex-direction:column; gap:8px}
+    .field label{font-weight:900; font-size:12px; letter-spacing:.08em; color: rgba(255,255,255,.86)}
+    .field input,.field select,.field textarea{
+      width:100%;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.06);
+      color: rgba(255,255,255,.92);
+      padding: 12px 12px;
+      outline:none;
+      font-weight:700;
+    }
+    .field textarea{grid-column:1/-1; min-height: 120px; resize:vertical}
+    .form .full{grid-column:1/-1}
+    .hint{font-size:12px; color: rgba(255,255,255,.62); font-weight:700; margin-top: 6px}
 
     /* Footer */
     footer{
@@ -608,12 +640,14 @@
       .why-grid{grid-template-columns:1fr}
       .why-media img{height: 420px}
       .foot-grid{grid-template-columns: 1fr 1fr}
+      .contact-wrap{grid-template-columns: 1fr}
     }
     @media (max-width: 520px){
       .stats-grid{grid-template-columns: 1fr; }
       .feature-grid{grid-template-columns:1fr}
       .nav-right .phone{display:none}
       .rating-badge{left:16px; right:16px; max-width:none}
+      .form{grid-template-columns: 1fr}
     }
   </style>
 </head>
@@ -803,7 +837,7 @@
       </div>
     </section>
 
-    <!-- SERVICES (ONLY ONCE — duplicates removed) -->
+    <!-- SERVICES (images are EXACT local uploads) -->
     <section class="section" id="services">
       <div class="container">
         <div class="section-title">
@@ -812,10 +846,8 @@
         </div>
 
         <div class="cards" role="list">
-          <!-- Row 1 -->
           <a class="card" role="listitem" href="#quote">
-            <img alt="Tree removal service"
-                 src="https://images.unsplash.com/photo-1603398938449-6f7dd0fb9e0a?auto=format&fit=crop&w=1600&q=80">
+            <img alt="Tree removal service" src="assets/tree-removal.png">
             <div class="content">
               <h3>Tree Removal</h3>
               <p>Safe removal of hazardous, dead, or unwanted trees from any location.</p>
@@ -824,8 +856,7 @@
           </a>
 
           <a class="card" role="listitem" href="#quote">
-            <img alt="Tree trimming service"
-                 src="https://images.unsplash.com/photo-1603398938471-6b30c7d2b5cf?auto=format&fit=crop&w=1600&q=80">
+            <img alt="Tree trimming service" src="assets/tree-trimming.png">
             <div class="content">
               <h3>Tree Trimming</h3>
               <p>Professional pruning for health, clearance, shape, and safety.</p>
@@ -834,8 +865,7 @@
           </a>
 
           <a class="card" role="listitem" href="#quote">
-            <img alt="Stump grinding service"
-                 src="https://images.unsplash.com/photo-1601121141527-06b2d1a99a6d?auto=format&fit=crop&w=1600&q=80">
+            <img alt="Stump grinding service" src="assets/stump-grinding.png">
             <div class="content">
               <h3>Stump Grinding</h3>
               <p>Complete stump removal with a clean, level finish.</p>
@@ -843,10 +873,8 @@
             </div>
           </a>
 
-          <!-- Row 2 (matches your screenshot vibe; NOT duplicated anywhere else) -->
           <a class="card" role="listitem" href="#quote">
-            <img alt="Emergency service removing fallen tree"
-                 src="https://images.unsplash.com/photo-1563298723-dcfebaa392e3?auto=format&fit=crop&w=1600&q=80">
+            <img alt="Emergency service removing fallen tree" src="assets/emergency-service.png">
             <div class="content">
               <h3>Emergency Service</h3>
               <p>24/7 response for urgent tree hazards and fallen limbs.</p>
@@ -855,8 +883,7 @@
           </a>
 
           <a class="card" role="listitem" href="#quote">
-            <img alt="Storm damage cleanup crew"
-                 src="https://images.unsplash.com/photo-1523413455585-23e0f1a41f5a?auto=format&fit=crop&w=1600&q=80">
+            <img alt="Storm damage cleanup crew" src="assets/storm-damage.png">
             <div class="content">
               <h3>Storm Damage</h3>
               <p>Fast cleanup and restoration after severe weather events.</p>
@@ -865,8 +892,7 @@
           </a>
 
           <a class="card" role="listitem" href="#quote">
-            <img alt="Lot clearing with excavator"
-                 src="https://images.unsplash.com/photo-1501706362039-c6e80948b9f6?auto=format&fit=crop&w=1600&q=80">
+            <img alt="Lot clearing with excavator" src="assets/lot-clearing.png">
             <div class="content">
               <h3>Lot Clearing</h3>
               <p>Brush removal and property preparation for any project.</p>
@@ -882,7 +908,7 @@
       <div class="stats-grid">
         <div class="stat">
           <div class="ico" aria-hidden="true">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+            <svg width="22" height="22" viewBox="0 0 24 " fill="none">
               <path d="M12 2c2.8 2.4 4.5 4.6 5.3 6.7 1.7.3 3.2 1.6 3.7 3.3.7  2.6-.9 5.3-3.6 6a5.9 5.9 0 0 1-1.8.2H8.4a5.8 5.8 0 0 1-1.8-.2c-2.7-.7-4.3-3.4-3.6-6 .5-1.7 2-3 3.7-3.3C7.5 6.6 9.2 4.4 12 2Z" stroke="rgba(255,255,255,.88)" stroke-width="1.5"/>
               <path d="M12 12v10" stroke="rgba(255,255,255,.88)" stroke-width="1.5" stroke-linecap="round"/>
             </svg>
