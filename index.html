@@ -6,29 +6,26 @@
   <title>Ducky's Tree Service — Home</title>
   <meta name="description" content="Professional tree removal, trimming, stump grinding, and emergency service. Licensed & insured. Free estimates." />
 
-  <!-- Fonts (optional) -->
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
   <style>
     :root{
       --bg:#0b120e;
-      --panel:rgba(18, 24, 20, .66);
-      --panel2:rgba(255,255,255,.06);
-      --line:rgba(255,255,255,.10);
+
       --text:#e9efe9;
       --muted:rgba(233,239,233,.78);
       --muted2:rgba(233,239,233,.62);
+
       --brand:#0a5a2a;
-      --brand2:#0b6b31;
-      --brand3:#083f1f;
       --cta:#0c6b31;
       --cta2:#0b5d2c;
-      --cream:#efe9de;
+
       --shadow: 0 20px 70px rgba(0,0,0,.45);
       --shadow2: 0 12px 36px rgba(0,0,0,.35);
-      --r:18px;
+
       --r2:22px;
       --max:1180px;
     }
@@ -45,16 +42,16 @@
     a{color:inherit;text-decoration:none}
     img{max-width:100%;display:block}
 
-    /* Background (FOREST) */
+    /* FOREST BACKGROUND */
     .page-bg{
       position:fixed; inset:0;
       background:
-        linear-gradient(180deg, rgba(0,0,0,.62), rgba(0,0,0,.78)),
-        url("https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=2400&q=80");
+        linear-gradient(180deg, rgba(0,0,0,.58), rgba(0,0,0,.78)),
+        url("https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=2600&q=80");
       background-size:cover;
       background-position:center;
       background-repeat:no-repeat;
-      filter:saturate(1.1) contrast(1.05);
+      filter:saturate(1.12) contrast(1.05);
       transform:scale(1.02);
       z-index:-2;
     }
@@ -68,7 +65,7 @@
       pointer-events:none;
     }
 
-    /* Top nav */
+    /* NAV */
     .nav-wrap{
       position:sticky; top:0;
       z-index:50;
@@ -103,7 +100,6 @@
       font-weight:700;
       font-size:22px;
     }
-
     .nav-links{
       display:flex; align-items:center; gap:20px;
       color: rgba(19,32,21,.78);
@@ -133,9 +129,10 @@
       border:1px solid rgba(0,0,0,.10);
       background: rgba(255,255,255,.55);
       color:#132015;
-      font-weight:600;
+      font-weight:700;
       box-shadow: 0 8px 20px rgba(0,0,0,.10);
       cursor:pointer;
+      transition: transform .15s ease;
     }
     .btn:hover{transform:translateY(-1px)}
     .btn:active{transform:translateY(0px)}
@@ -172,24 +169,15 @@
       padding: 12px 12px;
       border-radius:12px;
       color: rgba(19,32,21,.86);
-      font-weight:600;
+      font-weight:700;
     }
     .mobile-drawer a:hover{background: rgba(0,0,0,.04)}
 
-    /* Layout helpers */
-    .section{
-      position:relative;
-      padding: 60px 18px;
-    }
-    .container{
-      max-width: var(--max);
-      margin:0 auto;
-    }
+    .section{ position:relative; padding: 60px 18px; }
+    .container{ max-width: var(--max); margin:0 auto; }
 
-    /* Hero */
-    .hero{
-      padding: 56px 18px 34px;
-    }
+    /* HERO */
+    .hero{ padding: 56px 18px 34px; }
     .hero-grid{
       display:grid;
       grid-template-columns: 1.05fr .95fr;
@@ -197,16 +185,11 @@
       align-items:center;
       min-height: 62vh;
     }
-    .hero-left{
-      padding: 28px 0;
-    }
+    .hero-left{ padding: 28px 0; }
     .kicker{
-      display:inline-flex;
-      gap:10px;
-      align-items:center;
+      display:inline-flex; gap:10px; align-items:center;
       color: rgba(255,255,255,.82);
-      font-weight:600;
-      letter-spacing:.2px;
+      font-weight:700;
       margin-bottom: 14px;
     }
     h1{
@@ -224,6 +207,7 @@
       line-height:1.6;
       max-width: 520px;
       margin: 0 0 22px;
+      font-weight:600;
     }
     .hero-pills{
       display:grid;
@@ -235,23 +219,13 @@
     .pill{
       display:flex; gap:10px; align-items:center;
       color: rgba(255,255,255,.86);
-      font-weight:600;
-      font-size:14px;
+      font-weight:800; font-size:14px;
     }
-    .pill svg{opacity:.95}
-    .hero-ctas{
-      display:flex; gap:14px; align-items:center;
-      flex-wrap:wrap;
-      margin-top: 8px;
-    }
+    .hero-ctas{ display:flex; gap:14px; align-items:center; flex-wrap:wrap; margin-top: 8px; }
     .hero-ctas .btn-primary{padding:12px 16px}
     .hero-ctas .btn-outline{padding:12px 16px}
 
-    .hero-right{
-      position:relative;
-      display:grid;
-      place-items:center;
-    }
+    .hero-right{ position:relative; display:grid; place-items:center; }
     .media-card{
       width:100%;
       border-radius: 20px;
@@ -261,21 +235,14 @@
       box-shadow: var(--shadow);
       position:relative;
     }
-    .media-card img{
-      width:100%;
-      height: 420px;
-      object-fit:cover;
-    }
+    .media-card img{ width:100%; height: 420px; object-fit:cover; }
     .media-card:after{
-      content:"";
-      position:absolute; inset:0;
+      content:""; position:absolute; inset:0;
       background: linear-gradient(180deg, rgba(0,0,0,.08), rgba(0,0,0,.24));
       pointer-events:none;
     }
     .rating-badge{
-      position:absolute;
-      left: 28px;
-      bottom: 24px;
+      position:absolute; left: 28px; bottom: 24px;
       display:flex; align-items:center; gap:12px;
       padding: 12px 14px;
       border-radius: 16px;
@@ -290,11 +257,11 @@
       display:grid;place-items:center;
       background: rgba(10,90,42,.12);
       color: var(--brand);
-      font-weight:800;
+      font-weight:900;
     }
     .stars{display:flex; gap:2px; color:#b98206}
-    .rating-text{font-weight:700}
-    .rating-sub{color:rgba(0,0,0,.62); font-weight:600; font-size:13px}
+    .rating-text{font-weight:900}
+    .rating-sub{color:rgba(0,0,0,.62); font-weight:800; font-size:13px}
 
     /* Steps bar */
     .steps{
@@ -322,54 +289,30 @@
       border: 1px solid rgba(255,255,255,.14);
       flex:0 0 auto;
     }
-    .step .meta{
-      font-size:12px;
-      letter-spacing:.12em;
-      font-weight:800;
-      opacity:.85;
-    }
-    .step h4{
-      margin:4px 0 6px;
-      font-size:16px;
-      font-weight:800;
-      letter-spacing:.2px;
-    }
-    .step p{
-      margin:0;
-      color: rgba(255,255,255,.78);
-      font-weight:600;
-      line-height:1.45;
-      font-size:13px;
-      max-width: 340px;
-    }
+    .step .meta{ font-size:12px; letter-spacing:.12em; font-weight:900; opacity:.85; }
+    .step h4{ margin:4px 0 6px; font-size:16px; font-weight:900; letter-spacing:.2px; }
+    .step p{ margin:0; color: rgba(255,255,255,.78); font-weight:700; line-height:1.45; font-size:13px; max-width: 340px; }
 
-    /* Services grid */
-    .section-title{
-      text-align:center;
-      margin-bottom: 26px;
-    }
+    /* Section title */
+    .section-title{ text-align:center; margin-bottom: 26px; }
     .section-title h2{
       font-family:"Playfair Display", serif;
       margin:0 0 10px;
       font-size: 44px;
       letter-spacing:-.4px;
     }
-    .section-title p{
-      margin:0;
-      color: var(--muted);
-      font-weight:600;
-    }
+    .section-title p{ margin:0; color: var(--muted); font-weight:700; }
 
-    /* ✅ FIX: ensure equal height cards across the grid */
+    /* Services Cards - equal heights */
     .cards{
       display:grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 18px;
       align-items:stretch;
-      grid-auto-rows: 240px; /* all cards same vertical size */
+      grid-auto-rows: 240px;
     }
     .card{
-      height: 240px; /* lock height */
+      height: 240px;
       border-radius: var(--r2);
       overflow:hidden;
       position:relative;
@@ -377,12 +320,14 @@
       box-shadow: var(--shadow2);
       background: rgba(255,255,255,.06);
       transform: translateZ(0);
+      transition: transform .18s ease;
     }
     .card img{
       width:100%;
       height:100%;
       object-fit:cover;
       transform: scale(1.02);
+      transition: transform .25s ease;
     }
     .card:before{
       content:"";
@@ -410,7 +355,7 @@
     .card p{
       margin:0;
       color: rgba(255,255,255,.82);
-      font-weight:600;
+      font-weight:700;
       line-height:1.5;
       max-width: 360px;
       font-size: 13px;
@@ -419,7 +364,7 @@
       display:inline-flex;
       align-items:center;
       gap:8px;
-      font-weight:800;
+      font-weight:900;
       color: rgba(255,255,255,.88);
       width:max-content;
       padding: 8px 10px;
@@ -429,12 +374,6 @@
     }
     .card:hover{transform: translateY(-2px)}
     .card:hover img{transform: scale(1.06)}
-
-    /* Trio cards (emergency, storm, lot clearing) */
-    .trio{
-      padding-top: 10px;
-      padding-bottom: 0;
-    }
 
     /* Stats bar */
     .stats{
@@ -451,11 +390,7 @@
       grid-template-columns: repeat(4, 1fr);
       gap: 14px;
     }
-    .stat{
-      text-align:center;
-      padding: 18px 12px;
-      border-radius: 18px;
-    }
+    .stat{ text-align:center; padding: 18px 12px; border-radius: 18px; }
     .stat .ico{
       width:54px;height:54px;border-radius:999px;
       display:grid;place-items:center;
@@ -463,21 +398,11 @@
       background: rgba(0,0,0,.18);
       border: 1px solid rgba(255,255,255,.12);
     }
-    .stat .num{
-      font-size: 44px;
-      font-weight:900;
-      letter-spacing:-.8px;
-      margin-bottom: 4px;
-    }
-    .stat .lbl{
-      color: rgba(255,255,255,.78);
-      font-weight:700;
-    }
+    .stat .num{ font-size: 44px; font-weight:900; letter-spacing:-.8px; margin-bottom: 4px; }
+    .stat .lbl{ color: rgba(255,255,255,.78); font-weight:800; }
 
     /* Why choose */
-    .why{
-      padding-top: 56px;
-    }
+    .why{ padding-top: 56px; }
     .why-grid{
       display:grid;
       grid-template-columns: 1fr 1fr;
@@ -493,24 +418,9 @@
       padding: 28px 26px;
       backdrop-filter: blur(8px);
     }
-    .why-panel h2{
-      font-family:"Playfair Display", serif;
-      margin: 0 0 10px;
-      font-size: 44px;
-    }
-    .why-panel p{
-      margin:0 0 22px;
-      color: var(--muted);
-      font-weight:600;
-      line-height:1.6;
-      max-width: 520px;
-    }
-    .feature-grid{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-      margin-top: 10px;
-    }
+    .why-panel h2{ font-family:"Playfair Display", serif; margin: 0 0 10px; font-size: 44px; }
+    .why-panel p{ margin:0 0 22px; color: var(--muted); font-weight:700; line-height:1.6; max-width: 520px; }
+    .feature-grid{ display:grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 10px; }
     .feature{
       display:flex; gap:12px; align-items:flex-start;
       padding: 14px 14px;
@@ -526,7 +436,7 @@
       flex:0 0 auto;
     }
     .feature h4{margin:0 0 4px; font-weight:900}
-    .feature p{margin:0; color: var(--muted2); font-weight:600; font-size:13px; line-height:1.45}
+    .feature p{margin:0; color: var(--muted2); font-weight:700; font-size:13px; line-height:1.45}
 
     .why-media{
       border-radius: var(--r2);
@@ -536,36 +446,22 @@
       background: rgba(255,255,255,.08);
       position:relative;
     }
-    .why-media img{
-      width:100%;
-      height: 520px;
-      object-fit:cover;
-    }
+    .why-media img{ width:100%; height: 520px; object-fit:cover; }
     .why-media:after{
-      content:"";
-      position:absolute; inset:0;
+      content:""; position:absolute; inset:0;
       background: linear-gradient(180deg, rgba(0,0,0,.10), rgba(0,0,0,.22));
       pointer-events:none;
     }
 
     /* Reviews */
-    .reviews{
-      padding-top: 64px;
-    }
-    .reviews-head{
-      text-align:center;
-      margin-bottom: 22px;
-    }
-    .reviews-head h2{
-      font-family:"Playfair Display", serif;
-      margin:0 0 10px;
-      font-size: 44px;
-    }
+    .reviews{ padding-top: 64px; }
+    .reviews-head{ text-align:center; margin-bottom: 22px; }
+    .reviews-head h2{ font-family:"Playfair Display", serif; margin:0 0 10px; font-size: 44px; }
     .reviews-sub{
       display:flex; align-items:center; justify-content:center;
       gap: 12px;
       color: rgba(255,255,255,.78);
-      font-weight:700;
+      font-weight:800;
     }
     .review-grid{
       display:grid;
@@ -585,35 +481,15 @@
       flex-direction:column;
       gap: 12px;
     }
-    .review .quote{
-      color: rgba(255,255,255,.86);
-      font-weight:600;
-      line-height:1.6;
-      flex:1;
-    }
-    .review .hr{
-      height:1px;
-      background: rgba(255,255,255,.12);
-      margin: 8px 0;
-    }
-    .review .who{
-      display:flex;
-      flex-direction:column;
-      gap:4px;
-    }
+    .review .quote{ color: rgba(255,255,255,.86); font-weight:700; line-height:1.6; flex:1; }
+    .review .hr{ height:1px; background: rgba(255,255,255,.12); margin: 8px 0; }
+    .review .who{ display:flex; flex-direction:column; gap:4px; }
     .review .name{font-weight:900}
-    .review .svc{color: rgba(255,255,255,.65); font-weight:700; font-size:13px}
-    .reviews-cta{
-      margin-top: 18px;
-      display:flex;
-      justify-content:center;
-    }
+    .review .svc{color: rgba(255,255,255,.65); font-weight:800; font-size:13px}
+    .reviews-cta{ margin-top: 18px; display:flex; justify-content:center; }
 
     /* Service areas */
-    .areas{
-      padding-top: 70px;
-      padding-bottom: 44px;
-    }
+    .areas{ padding-top: 70px; padding-bottom: 44px; }
     .areas-card{
       border-radius: var(--r2);
       background: rgba(0,0,0,.30);
@@ -623,21 +499,10 @@
       backdrop-filter: blur(10px);
       text-align:center;
     }
-    .areas-card h2{
-      font-family:"Playfair Display", serif;
-      margin:0 0 10px;
-      font-size: 44px;
-    }
-    .areas-card p{
-      margin:0 0 18px;
-      color: var(--muted);
-      font-weight:600;
-    }
+    .areas-card h2{ font-family:"Playfair Display", serif; margin:0 0 10px; font-size: 44px; }
+    .areas-card p{ margin:0 0 18px; color: var(--muted); font-weight:700; }
     .chips{
-      display:flex;
-      gap: 12px;
-      justify-content:center;
-      flex-wrap:wrap;
+      display:flex; gap: 12px; justify-content:center; flex-wrap:wrap;
       margin: 18px 0 20px;
     }
     .chip{
@@ -646,9 +511,8 @@
       background: rgba(255,255,255,.06);
       border: 1px solid rgba(255,255,255,.12);
       color: rgba(255,255,255,.86);
-      font-weight:800;
+      font-weight:900;
     }
-    .areas-card .btn-primary{padding: 12px 16px}
 
     /* Quote CTA band */
     .quote-band{
@@ -657,24 +521,25 @@
       border-bottom: 1px solid rgba(255,255,255,.10);
       padding: 46px 18px;
     }
-    .quote-inner{
-      max-width: var(--max);
-      margin:0 auto;
-      text-align:center;
-    }
-    .quote-inner h2{
-      font-family:"Playfair Display", serif;
-      margin:0 0 10px;
-      font-size: 48px;
-    }
+    .quote-inner{ max-width: var(--max); margin:0 auto; text-align:center; }
+    .quote-inner h2{ font-family:"Playfair Display", serif; margin:0 0 10px; font-size: 48px; }
     .quote-inner p{
       margin:0 auto 20px;
       max-width: 620px;
       color: rgba(255,255,255,.80);
-      font-weight:700;
+      font-weight:800;
       line-height:1.6;
     }
     .quote-inner .hero-ctas{justify-content:center}
+
+    /* Contact block */
+    .glass{
+      background: rgba(0,0,0,.30);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: var(--r2);
+      backdrop-filter: blur(10px);
+      box-shadow: var(--shadow2);
+    }
 
     /* Footer */
     footer{
@@ -690,9 +555,7 @@
       grid-template-columns: 1.2fr 1fr 1fr 1.1fr;
       gap: 18px;
     }
-    .foot-brand{
-      display:flex; flex-direction:column; gap: 12px;
-    }
+    .foot-brand{ display:flex; flex-direction:column; gap: 12px; }
     .foot-brand .brandline{
       display:flex; gap:10px; align-items:center;
       font-family:"Playfair Display", serif;
@@ -702,7 +565,7 @@
     .foot-brand p{
       margin:0;
       color: rgba(255,255,255,.70);
-      font-weight:600;
+      font-weight:700;
       line-height:1.6;
       max-width: 340px;
     }
@@ -717,7 +580,7 @@
       display:block;
       padding: 8px 0;
       color: rgba(255,255,255,.70);
-      font-weight:700;
+      font-weight:800;
     }
     .foot-col a:hover{color:#fff}
     .foot-bottom{
@@ -726,17 +589,8 @@
       padding-top: 18px;
       border-top: 1px solid rgba(255,255,255,.10);
       color: rgba(255,255,255,.60);
-      font-weight:700;
+      font-weight:800;
       text-align:center;
-    }
-
-    /* Small helper */
-    .glass{
-      background: rgba(0,0,0,.30);
-      border: 1px solid rgba(255,255,255,.12);
-      border-radius: var(--r2);
-      backdrop-filter: blur(10px);
-      box-shadow: var(--shadow2);
     }
 
     /* Responsive */
@@ -773,7 +627,6 @@
     <nav class="nav" aria-label="Primary">
       <a class="brand" href="#home">
         <span class="mark" aria-hidden="true">
-          <!-- tree icon -->
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
             <path d="M12 2c2.8 2.4 4.5 4.6 5.3 6.7 1.7.3 3.2 1.6 3.7 3.3.7 2.6-.9 5.3-3.6 6a5.9 5.9 0 0 1-1.8.2H8.4a5.8 5.8 0 0 1-1.8-.2c-2.7-.7-4.3-3.4-3.6-6 .5-1.7 2-3 3.7-3.3C7.5 6.6 9.2 4.4 12 2Z" stroke="rgba(10,90,42,.95)" stroke-width="1.5"/>
             <path d="M12 12v10" stroke="rgba(10,90,42,.95)" stroke-width="1.5" stroke-linecap="round"/>
@@ -847,6 +700,7 @@
               </svg>
               Licensed &amp; Insured
             </div>
+
             <div class="pill">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                 <path d="M12 7v5l3 2" stroke="rgba(255,255,255,.86)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
@@ -854,6 +708,7 @@
               </svg>
               Fast Scheduling
             </div>
+
             <div class="pill">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                 <path d="M4 19h16" stroke="rgba(255,255,255,.86)" stroke-width="1.6" stroke-linecap="round"/>
@@ -862,6 +717,7 @@
               </svg>
               Cleanup Included
             </div>
+
             <div class="pill">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                 <path d="M21 11.5a8.5 8.5 0 1 1-3.1-6.6" stroke="rgba(255,255,255,.86)" stroke-width="1.5" stroke-linecap="round"/>
@@ -884,7 +740,8 @@
 
         <div class="hero-right">
           <div class="media-card" aria-label="Tree crew photo">
-            <img alt="Tree worker in bucket truck cutting a branch" src="https://images.unsplash.com/photo-1603398938378-c9b0c2a4b0a8?auto=format&fit=crop&w=1600&q=80">
+            <img alt="Tree worker in bucket truck cutting a branch"
+                 src="https://images.unsplash.com/photo-1603398938378-c9b0c2a4b0a8?auto=format&fit=crop&w=1600&q=80">
             <div class="rating-badge" aria-label="Rating badge">
               <div class="rating-dot">5</div>
               <div>
@@ -900,7 +757,7 @@
       </div>
     </section>
 
-    <!-- Steps bar (green) -->
+    <!-- Steps bar -->
     <section class="steps" aria-label="How it works">
       <div class="steps-grid">
         <div class="step">
@@ -946,7 +803,7 @@
       </div>
     </section>
 
-    <!-- SERVICES -->
+    <!-- SERVICES (ONLY ONCE — duplicates removed) -->
     <section class="section" id="services">
       <div class="container">
         <div class="section-title">
@@ -955,9 +812,10 @@
         </div>
 
         <div class="cards" role="list">
-          <!-- ✅ Images now match services -->
+          <!-- Row 1 -->
           <a class="card" role="listitem" href="#quote">
-            <img alt="Tree removal (chainsaw cutting trunk)" src="https://images.unsplash.com/photo-1603398938449-6f7dd0fb9e0a?auto=format&fit=crop&w=1600&q=80">
+            <img alt="Tree removal service"
+                 src="https://images.unsplash.com/photo-1603398938449-6f7dd0fb9e0a?auto=format&fit=crop&w=1600&q=80">
             <div class="content">
               <h3>Tree Removal</h3>
               <p>Safe removal of hazardous, dead, or unwanted trees from any location.</p>
@@ -966,7 +824,8 @@
           </a>
 
           <a class="card" role="listitem" href="#quote">
-            <img alt="Tree trimming (pruning branches)" src="https://images.unsplash.com/photo-1603398938471-6b30c7d2b5cf?auto=format&fit=crop&w=1600&q=80">
+            <img alt="Tree trimming service"
+                 src="https://images.unsplash.com/photo-1603398938471-6b30c7d2b5cf?auto=format&fit=crop&w=1600&q=80">
             <div class="content">
               <h3>Tree Trimming</h3>
               <p>Professional pruning for health, clearance, shape, and safety.</p>
@@ -975,7 +834,8 @@
           </a>
 
           <a class="card" role="listitem" href="#quote">
-            <img alt="Stump grinding machine" src="https://images.unsplash.com/photo-1601121141527-06b2d1a99a6d?auto=format&fit=crop&w=1600&q=80">
+            <img alt="Stump grinding service"
+                 src="https://images.unsplash.com/photo-1601121141527-06b2d1a99a6d?auto=format&fit=crop&w=1600&q=80">
             <div class="content">
               <h3>Stump Grinding</h3>
               <p>Complete stump removal with a clean, level finish.</p>
@@ -983,8 +843,10 @@
             </div>
           </a>
 
+          <!-- Row 2 (matches your screenshot vibe; NOT duplicated anywhere else) -->
           <a class="card" role="listitem" href="#quote">
-            <img alt="Emergency tree service clearing fallen tree" src="https://images.unsplash.com/photo-1520975916090-3105956dac38?auto=format&fit=crop&w=1600&q=80">
+            <img alt="Emergency service removing fallen tree"
+                 src="https://images.unsplash.com/photo-1563298723-dcfebaa392e3?auto=format&fit=crop&w=1600&q=80">
             <div class="content">
               <h3>Emergency Service</h3>
               <p>24/7 response for urgent tree hazards and fallen limbs.</p>
@@ -993,7 +855,8 @@
           </a>
 
           <a class="card" role="listitem" href="#quote">
-            <img alt="Storm damage cleanup (fallen branches)" src="https://images.unsplash.com/photo-1562004760-aceed7bb0fe3?auto=format&fit=crop&w=1600&q=80">
+            <img alt="Storm damage cleanup crew"
+                 src="https://images.unsplash.com/photo-1523413455585-23e0f1a41f5a?auto=format&fit=crop&w=1600&q=80">
             <div class="content">
               <h3>Storm Damage</h3>
               <p>Fast cleanup and restoration after severe weather events.</p>
@@ -1002,39 +865,8 @@
           </a>
 
           <a class="card" role="listitem" href="#quote">
-            <img alt="Lot clearing with heavy machinery" src="https://images.unsplash.com/photo-1516478177764-9fe5bd7e9717?auto=format&fit=crop&w=1600&q=80">
-            <div class="content">
-              <h3>Lot Clearing</h3>
-              <p>Brush removal and property preparation for any project.</p>
-              <span class="more">Learn more →</span>
-            </div>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Trio (matches the mid-scroll screenshot with 3 big cards) -->
-    <section class="section trio">
-      <div class="container">
-        <div class="cards">
-          <a class="card" href="#quote">
-            <img alt="Emergency crew clearing fallen tree" src="https://images.unsplash.com/photo-1542300051-3c0b8a4e83a7?auto=format&fit=crop&w=1600&q=80">
-            <div class="content">
-              <h3>Emergency Service</h3>
-              <p>24/7 response for urgent tree hazards and fallen limbs.</p>
-              <span class="more">Learn more →</span>
-            </div>
-          </a>
-          <a class="card" href="#quote">
-            <img alt="Storm cleanup team" src="https://images.unsplash.com/photo-1509030449524-9ce1c54a3f04?auto=format&fit=crop&w=1600&q=80">
-            <div class="content">
-              <h3>Storm Damage</h3>
-              <p>Fast cleanup and restoration after severe weather events.</p>
-              <span class="more">Learn more →</span>
-            </div>
-          </a>
-          <a class="card" href="#quote">
-            <img alt="Excavator clearing land" src="https://images.unsplash.com/photo-1591355599405-c2b5d3d8f3c0?auto=format&fit=crop&w=1600&q=80">
+            <img alt="Lot clearing with excavator"
+                 src="https://images.unsplash.com/photo-1501706362039-c6e80948b9f6?auto=format&fit=crop&w=1600&q=80">
             <div class="content">
               <h3>Lot Clearing</h3>
               <p>Brush removal and property preparation for any project.</p>
@@ -1051,7 +883,7 @@
         <div class="stat">
           <div class="ico" aria-hidden="true">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-              <path d="M12 2c2.8 2.4 4.5 4.6 5.3 6.7 1.7.3 3.2 1.6 3.7 3.3.7 2.6-.9 5.3-3.6 6a5.9 5.9 0 0 1-1.8.2H8.4a5.8 5.8 0 0 1-1.8-.2c-2.7-.7-4.3-3.4-3.6-6 .5-1.7 2-3 3.7-3.3C7.5 6.6 9.2 4.4 12 2Z" stroke="rgba(255,255,255,.88)" stroke-width="1.5"/>
+              <path d="M12 2c2.8 2.4 4.5 4.6 5.3 6.7 1.7.3 3.2 1.6 3.7 3.3.7  2.6-.9 5.3-3.6 6a5.9 5.9 0 0 1-1.8.2H8.4a5.8 5.8 0 0 1-1.8-.2c-2.7-.7-4.3-3.4-3.6-6 .5-1.7 2-3 3.7-3.3C7.5 6.6 9.2 4.4 12 2Z" stroke="rgba(255,255,255,.88)" stroke-width="1.5"/>
               <path d="M12 12v10" stroke="rgba(255,255,255,.88)" stroke-width="1.5" stroke-linecap="round"/>
             </svg>
           </div>
