@@ -1236,13 +1236,72 @@
     const form = document.getElementById('quoteForm');
     const hint = document.getElementById('formHint');
 
-    form?.addEventListener('submit', (e) => {
-      e.preventDefault();
-      if (hint) {
-        hint.textContent = "Saved (demo). If you want this to email you, tell me and I’ll connect it to Google Apps Script.";
-      }
-      form.reset();
+    <script>
+  const hamburger = document.getElementById('hamburger');
+  const drawer = document.getElementById('drawer');
+
+  hamburger?.addEventListener('click', () => {
+    const isOpen = hamburger.getAttribute('aria-expanded') === 'true';
+    hamburger.setAttribute('aria-expanded', String(!isOpen));
+    drawer.classList.toggle('show');
+  });
+
+  drawer?.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      drawer.classList.remove('show');
+      hamburger?.setAttribute('aria-expanded', 'false');
     });
+  });
+
+  // ✅ Send form to Google Sheets
+  const form = document.getElementById('quoteForm');
+  const hint = document.getElementById('formHint');
+
+  // 1) PASTE YOUR WEB APP URL HERE:
+  const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxyuTvvsRljVjod5WG_JHZgn2xM3HwZ_jt-ajUpaRPlSHm07IxIrdi7H--tnPBHEORAiA/exec";
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const submitBtn = form.querySelector('button[type="submit"]');
+    if (submitBtn) submitBtn.disabled = true;
+
+    const payload = {
+      name: document.getElementById('name')?.value?.trim(),
+      phone: document.getElementById('phone')?.value?.trim(),
+      email: document.getElementById('email')?.value?.trim(),
+      service: document.getElementById('service')?.value,
+      address: document.getElementById('address')?.value?.trim(),
+      timeline: document.getElementById('timeline')?.value,
+      contactpref: document.getElementById('contactpref')?.value,
+      details: document.getElementById('details')?.value?.trim(),
+      page: window.location.href
+    };
+
+    try {
+      const res = await fetch(SCRIPT_URL, {
+        method: "POST",
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
+        body: JSON.stringify(payload)
+      });
+
+      const json = await res.json();
+
+      if (json.ok) {
+        if (hint) hint.textContent = "✅ Sent! We’ll contact you ASAP.";
+        form.reset();
+      } else {
+        if (hint) hint.textContent = "⚠️ Couldn’t send. Please call 609 213 6222.";
+        console.error(json.error);
+      }
+    } catch (err) {
+      if (hint) hint.textContent = "⚠️ Couldn’t send. Please call 609 213 6222.";
+      console.error(err);
+    } finally {
+      if (submitBtn) submitBtn.disabled = false;
+    }
+  });
+</script>
   </script>
 </body>
 </html>
