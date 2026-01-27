@@ -71,7 +71,7 @@ form?.addEventListener('submit', async (e) => {
     try {
     const res = await fetch(SCRIPT_URL, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
         body: JSON.stringify(payload)
     });
 
@@ -99,12 +99,17 @@ form?.addEventListener('submit', async (e) => {
     }
 
     } catch (err) {
-    modalTitle.textContent = "⚠️ Send failed MODAL TITLE ";
-    modalMsg.textContent = "Please call 609 213 6222.";
+    modalTitle.textContent = "⚠️ Send failed";
+    modalMsg.textContent = "Check console for error details.";
     openModal();
-    if (hint) hint.textContent = "⚠️ Couldn't send. Please call 609 213 6222.";
+    if (hint) hint.textContent = "⚠️ Couldn't send. Check console.";
+
+    console.error("❌ FETCH ERROR:");
     console.error(err);
+    console.error("Message:", err?.message);
+    console.error("Stack:", err?.stack);
     } finally {
+
     if (submitBtn) submitBtn.disabled = false;
     }
 });
