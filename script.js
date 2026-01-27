@@ -45,7 +45,7 @@ document.addEventListener('keydown', (e) => {
 });
 
 // 1) PASTE YOUR WEB APP URL HERE: ---------> #DONT CHANGE URL <-----------------
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxU3tQCBkedvE6tv48Tn0F86PI6EnFg0rjZFal3sIuJn-04ycBFFEkxxHlbjKW4n6zC/exec";
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxwAizKPyRJNWw_U1MChh7d3VzbimUi6rOmHJ8_l86mo2PyrJCzWgVZslyx9uheT3MI/exec";
 
 form?.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -99,7 +99,7 @@ form?.addEventListener('submit', async (e) => {
     }
 
     } catch (err) {
-    modalTitle.textContent = "⚠️ Send failed";
+    modalTitle.textContent = "⚠️ Send failed MODAL TITLE ";
     modalMsg.textContent = "Please call 609 213 6222.";
     openModal();
     if (hint) hint.textContent = "⚠️ Couldn't send. Please call 609 213 6222.";
