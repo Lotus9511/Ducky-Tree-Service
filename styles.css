@@ -55,11 +55,16 @@ img{max-width:100%;display:block}
 
 /* Logo image */
 .logo-img{
-    width:34px;
-    height:34px;
+    width:44px;
+    height:44px;
     border-radius:10px;
-    object-fit:cover;
+    object-fit:contain;
+    object-position: center;
     display:block;
+}
+.logo-img--footer{
+    object-fit: contain;
+    object-position: center;
 }
 .brand .name{ line-height:1; } 
 
@@ -87,10 +92,10 @@ img{max-width:100%;display:block}
     letter-spacing:.2px;
 }
 .brand .mark{
-    width:34px;height:34px;
+    width:52px;height:52px;
     display:grid;place-items:center;
-    border-radius:10px;
-    background: rgba(10,90,42,.12);
+    border-radius:14px;
+    background: rgba(10,90,42,.10);
     border:1px solid rgba(10,90,42,.18);
     overflow:hidden;
 }
@@ -539,17 +544,32 @@ h1{
 .feature p{margin:0; color: var(--muted2); font-weight:700; font-size:13px; line-height:1.45}
 
 .chips{
-    display:flex; gap: 12px; justify-content:flex-start; flex-wrap:wrap;
-    margin: 10px 0 14px;
+    display:flex; 
+    flex-wrap:wrap; 
+    gap:10px; 
+    margin-top: 16px;
+}
+.chips--tiles{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
 }
 .chip{
-    padding: 10px 14px;
-    border-radius: 999px;
-    background: rgba(255,255,255,.06);
-    border: 1px solid rgba(255,255,255,.12);
-    color: rgba(255,255,255,.86);
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
     font-weight:900;
+    color: rgba(255,255,255,.92);
 }
+.chips--tiles .chip{
+    justify-content:center;
+    width: 100%;
+    padding: 14px 14px;
+    border-radius: 18px;
+    background: rgba(255,255,255,.07);
+    border: 1px solid rgba(255,255,255,.14);
+}
+.chips--tiles .chip:hover{ background: rgba(255,255,255,.09); }
 
 .areas-list{
     margin: 10px 0 0;
@@ -595,6 +615,34 @@ h1{
 .review .name{font-weight:900}
 .review .from{color: rgba(255,255,255,.55); font-weight:700; font-size:12px}
 .review .svc{color: rgba(255,255,255,.65); font-weight:800; font-size:13px}
+.review .rating{
+    display:flex;
+    align-items:center;
+    gap: 4px;
+    margin-bottom: 8px;
+}
+.review .rating .star{
+    display:inline-block;
+    position:relative;
+    font-size: 13px;
+    line-height: 1;
+    color: rgba(255,255,255,.22);
+}
+.review .rating .star.full{ color: #f5c84c; }
+.review .rating .star.empty{ color: rgba(255,255,255,.22); }
+.review .rating .star.half{
+    overflow:hidden;
+    color: rgba(255,255,255,.22);
+}
+.review .rating .star.half::before{
+    content: "★";
+    position:absolute;
+    left:0;
+    top:0;
+    width:50%;
+    overflow:hidden;
+    color:#f5c84c;
+}
 .reviews-cta{ margin-top: 18px; display:flex; justify-content:center; }
 
 .review--split .review-footer{
@@ -609,8 +657,8 @@ h1{
     width:max-content;
     padding: 8px 10px;
     border-radius: 999px;
-    background: rgba(255,255,255,.08);
-    border: 1px solid rgba(255,255,255,.14);
+    background: rgba(255,255,255,.06);
+    border: 1px solid rgba(255,255,255,.12);
     color: rgba(255,255,255,.84);
     font-weight: 900;
     font-size: 12px;
