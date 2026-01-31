@@ -593,8 +593,40 @@ h1{
 .review .hr{ height:1px; background: rgba(255,255,255,.12); margin: 8px 0; }
 .review .who{ display:flex; flex-direction:column; gap:4px; }
 .review .name{font-weight:900}
+.review .from{color: rgba(255,255,255,.55); font-weight:700; font-size:12px}
 .review .svc{color: rgba(255,255,255,.65); font-weight:800; font-size:13px}
 .reviews-cta{ margin-top: 18px; display:flex; justify-content:center; }
+
+.review--split .review-footer{
+    display:flex;
+    align-items:flex-start;
+    justify-content:space-between;
+    gap: 12px;
+}
+
+.review--split .svc,
+.review--stacked .svc{
+    width:max-content;
+    padding: 8px 10px;
+    border-radius: 999px;
+    background: rgba(255,255,255,.08);
+    border: 1px solid rgba(255,255,255,.14);
+    color: rgba(255,255,255,.84);
+    font-weight: 900;
+    font-size: 12px;
+    letter-spacing: .02em;
+}
+
+.review--stacked .svc{
+    margin-top: 6px;
+}
+
+.review.hidden-review{
+    display: none !important;
+}
+.visible-review{
+    display: flex;
+}
 
 /* Contact form */
 #quoteForm{

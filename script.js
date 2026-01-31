@@ -205,3 +205,76 @@ form?.addEventListener("submit", async (e) => {
     }
   }
 });
+
+(function() {
+  const loadMoreBtn = document.getElementById("loadMoreReviews");
+  const reviewGrid = document.querySelector("#reviews .review-grid");
+  if (!loadMoreBtn || !reviewGrid) return;
+
+  const reviews = Array.from(reviewGrid.querySelectorAll(".review"));
+  let state = "initial";
+
+  function hideReview(review) {
+    review.classList.add("hidden-review");
+    review.style.setProperty("display", "none", "important");
+  }
+
+  function showReview(review) {
+    review.classList.remove("hidden-review");
+    review.style.setProperty("display", "flex", "important");
+  }
+
+  function resetToInitial() {
+    reviews.forEach((review, idx) => {
+      if (idx < 3) {
+        showReview(review);
+      } else {
+        hideReview(review);
+      }
+    });
+    state = "initial";
+    loadMoreBtn.textContent = "Load more reviews";
+    loadMoreBtn.disabled = false;
+    loadMoreBtn.style.opacity = "";
+    loadMoreBtn.style.cursor = "";
+  }
+
+  function showFirst6() {
+    reviews.forEach((review, idx) => {
+      if (idx < 6) {
+        showReview(review);
+      } else {
+        hideReview(review);
+      }
+    });
+    state = "showing6";
+    loadMoreBtn.textContent = "Show all reviews (12 more)";
+    loadMoreBtn.disabled = false;
+    loadMoreBtn.style.opacity = "";
+    loadMoreBtn.style.cursor = "";
+  }
+
+  function showAll18() {
+    reviews.forEach((review) => {
+      showReview(review);
+    });
+    state = "showingAll";
+    loadMoreBtn.textContent = "Hide reviews";
+    loadMoreBtn.disabled = false;
+    loadMoreBtn.style.opacity = "";
+    loadMoreBtn.style.cursor = "";
+  }
+
+  resetToInitial();
+
+  loadMoreBtn.addEventListener("click", () => {
+    if (state === "initial") {
+      showFirst6();
+    } else if (state === "showing6") {
+      showAll18();
+    } else if (state === "showingAll") {
+      resetToInitial();
+      document.getElementById("reviews").scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+  });
+})();
