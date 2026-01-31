@@ -19,6 +19,76 @@ drawer?.querySelectorAll("a").forEach((a) => {
 });
 
 // -----------------------------
+// Services flip cards
+// -----------------------------
+const serviceCards = Array.from(document.querySelectorAll("#services .card"));
+
+function closeAllServiceCards(except) {
+  serviceCards.forEach((c) => {
+    if (except && c === except) return;
+    c.classList.remove("flipped");
+    const back = c.querySelector(".card-back");
+    back?.setAttribute("aria-hidden", "true");
+  });
+}
+
+function openServiceCard(card) {
+  if (!card) return;
+  closeAllServiceCards(card);
+  card.classList.add("flipped");
+  const back = card.querySelector(".card-back");
+  back?.setAttribute("aria-hidden", "false");
+}
+
+function closeServiceCard(card) {
+  if (!card) return;
+  card.classList.remove("flipped");
+  const back = card.querySelector(".card-back");
+  back?.setAttribute("aria-hidden", "true");
+}
+
+serviceCards.forEach((card) => {
+  const learnMore = card.querySelector(".card-front .more");
+  const backClose = card.querySelector(".back-close");
+
+  learnMore?.addEventListener("click", (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    openServiceCard(card);
+  });
+
+  backClose?.addEventListener("click", (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    closeServiceCard(card);
+  });
+
+  card.addEventListener("click", (e) => {
+    if (!(card.classList.contains("flipped"))) return;
+    const target = e.target;
+    if (target instanceof Element && (target.closest("a") || target.closest("button"))) return;
+    closeServiceCard(card);
+  });
+
+  card.addEventListener("keydown", (e) => {
+    const key = e.key;
+    if (key !== "Enter" && key !== " ") return;
+    e.preventDefault();
+    if (card.classList.contains("flipped")) closeServiceCard(card);
+    else openServiceCard(card);
+  });
+});
+
+// Click anywhere outside a service card closes any open card
+document.addEventListener("click", (e) => {
+  if (!serviceCards.length) return;
+  const target = e.target;
+  if (!(target instanceof Element)) return;
+  if (target.closest("#services .card")) return;
+  closeAllServiceCards();
+});
+
+// -----------------------------
 // Modal
 // -----------------------------
 const modal = document.getElementById("successModal");
