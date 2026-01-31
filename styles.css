@@ -328,7 +328,9 @@ h1{
     position:absolute;
     inset:0;
     transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
     transition: transform .5s cubic-bezier(.2,.8,.2,1);
+    will-change: transform;
 }
 .card.flipped .card-inner{ transform: rotateY(180deg); }
 
@@ -338,13 +340,16 @@ h1{
     inset:0;
     backface-visibility:hidden;
     -webkit-backface-visibility:hidden;
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+    transition: opacity .18s ease;
 }
-.card-front{ position:relative; }
-.card-back{ transform: rotateY(180deg); }
+.card-front{ position:relative; transform: rotateY(0deg); opacity: 1; }
+.card-back{ transform: rotateY(180deg); opacity: 0; }
 
 .card-back{ pointer-events:none; }
-.card.flipped .card-front{ pointer-events:none; }
-.card.flipped .card-back{ pointer-events:auto; }
+.card.flipped .card-front{ pointer-events:none; opacity: 0; }
+.card.flipped .card-back{ pointer-events:auto; opacity: 1; }
 
 .card-front img{
     width:100%;
@@ -373,12 +378,12 @@ h1{
 }
 .card-front .content{
     position:absolute;
-    inset: 0;
-    padding: 22px;
     display:flex;
     flex-direction:column;
-    justify-content:flex-end;
+    inset: 0;
+    padding: 22px;
     gap: clamp(8px, 1.2vw, 12px);
+    justify-content:flex-end;
     z-index:2;
     padding-bottom: clamp(26px, 2.4vw, 38px);
 }
@@ -592,6 +597,9 @@ h1{
 .reviews-cta{ margin-top: 18px; display:flex; justify-content:center; }
 
 /* Contact form */
+#quoteForm{
+    scroll-margin-top: 200px;
+}
 .glass{
     background: rgba(0,0,0,.30);
     border: 1px solid rgba(255,255,255,.12);
@@ -702,7 +710,7 @@ footer{
 
     .card-front .content{
         padding: 18px;
-        padding-bottom: clamp(22px, 4vw, 36px);
+        padding-bottom: clamp(40px, 6vw, 56px);
         gap: 10px;
     }
     .card-front h3{
