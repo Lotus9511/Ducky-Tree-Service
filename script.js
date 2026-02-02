@@ -233,7 +233,7 @@ form?.addEventListener("submit", async (e) => {
       }
     });
     state = "initial";
-    loadMoreBtn.textContent = "Load more reviews";
+    loadMoreBtn.textContent = "Load More Reviews";
     loadMoreBtn.disabled = false;
     loadMoreBtn.style.opacity = "";
     loadMoreBtn.style.cursor = "";
@@ -248,7 +248,7 @@ form?.addEventListener("submit", async (e) => {
       }
     });
     state = "showing6";
-    loadMoreBtn.textContent = "Show all reviews (12 more)";
+    loadMoreBtn.textContent = "Show All Reviews (12 more)";
     loadMoreBtn.disabled = false;
     loadMoreBtn.style.opacity = "";
     loadMoreBtn.style.cursor = "";
@@ -259,7 +259,7 @@ form?.addEventListener("submit", async (e) => {
       showReview(review);
     });
     state = "showingAll";
-    loadMoreBtn.textContent = "Hide reviews";
+    loadMoreBtn.textContent = "Hide Reviews";
     loadMoreBtn.disabled = false;
     loadMoreBtn.style.opacity = "";
     loadMoreBtn.style.cursor = "";
