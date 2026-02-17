@@ -253,7 +253,7 @@ form?.addEventListener("submit", async (e) => {
     loadMoreBtn.style.opacity = "";
     loadMoreBtn.style.cursor = "";
   }
-
+  // show all reviews
   function showAll18() {
     reviews.forEach((review) => {
       showReview(review);
@@ -266,7 +266,7 @@ form?.addEventListener("submit", async (e) => {
   }
 
   resetToInitial();
-
+  // load more reviews
   loadMoreBtn.addEventListener("click", () => {
     if (state === "initial") {
       showFirst6();
