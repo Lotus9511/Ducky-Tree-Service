@@ -124,7 +124,7 @@ const hint = document.getElementById("formHint");
 
 // 1) PASTE YOUR WEB APP URL HERE:
 const SCRIPT_URL =
-  "https://script.google.com/macros/s/AKfycbxwAizKPyRJNWw_U1MChh7d3VzbimUi6rOmHJ8_l86mo2PyrJCzWgVZslyx9uheT3MI/exec";
+  "https://script.google.com/macros/s/AKfycbxU3tQCBkedvE6tv48Tn0F86PI6EnFg0rjZFal3sIuJn-04ycBFFEkxxHlbjKW4n6zC/exec";
 
 form?.addEventListener("submit", async (e) => {
   e.preventDefault();
